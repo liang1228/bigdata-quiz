@@ -148,13 +148,16 @@
             top: 4px;
             bottom: 4px;
             left: 4px;
-            width: calc(50% - 4px);
+            width: calc(33.333% - 2.66px);
             border-radius: 12px;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 0;
         }
         .mode-review .segmented-slider {
             transform: translateX(100%);
+        }
+        .mode-mistakes .segmented-slider {
+            transform: translateX(200%);
         }
 
         /* Progress Bar */
@@ -204,13 +207,16 @@
 
         <!-- Segmented Control for Mode -->
         <div class="flex justify-center animate-fade-in-up" style="animation-delay: 0.1s">
-            <div class="relative flex p-1 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md rounded-2xl shadow-sm border border-slate-200/50 dark:border-slate-700/50 w-full max-w-[320px] sm:max-w-[380px]" :class="{'mode-review': mode === 'review'}">
+            <div class="relative flex p-1 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md rounded-2xl shadow-sm border border-slate-200/50 dark:border-slate-700/50 w-full max-w-[420px] sm:max-w-[480px]" :class="{'mode-review': mode === 'review', 'mode-mistakes': mode === 'mistakes'}">
                 <div class="segmented-slider bg-brand-500 dark:bg-brand-600 shadow-[0_2px_8px_rgba(20,184,166,0.3)]"></div>
                 <button @click="setMode('quiz')" class="relative z-10 flex-1 py-3 rounded-xl font-semibold text-sm sm:text-base transition-colors duration-300 flex justify-center items-center gap-1.5 whitespace-nowrap" :class="mode === 'quiz' ? 'text-white' : 'text-ink-muted dark:text-slate-400 hover:text-ink-main dark:hover:text-white'">
-                    <i data-lucide="play-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i> 模拟刷题 <span class="hidden sm:inline text-xs opacity-60 font-normal ml-1">A</span>
+                    <i data-lucide="play-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i> <span class="hidden sm:inline">模拟</span>刷题 <span class="hidden sm:inline text-xs opacity-60 font-normal ml-1">A</span>
                 </button>
                 <button @click="setMode('review')" class="relative z-10 flex-1 py-3 rounded-xl font-semibold text-sm sm:text-base transition-colors duration-300 flex justify-center items-center gap-1.5 whitespace-nowrap" :class="mode === 'review' ? 'text-white' : 'text-ink-muted dark:text-slate-400 hover:text-ink-main dark:hover:text-white'">
-                    <i data-lucide="list-checks" class="w-4 h-4 sm:w-5 sm:h-5"></i> 速记背诵 <span class="hidden sm:inline text-xs opacity-60 font-normal ml-1">B</span>
+                    <i data-lucide="list-checks" class="w-4 h-4 sm:w-5 sm:h-5"></i> <span class="hidden sm:inline">速记</span>背诵 <span class="hidden sm:inline text-xs opacity-60 font-normal ml-1">B</span>
+                </button>
+                <button @click="setMode('mistakes')" class="relative z-10 flex-1 py-3 rounded-xl font-semibold text-sm sm:text-base transition-colors duration-300 flex justify-center items-center gap-1.5 whitespace-nowrap" :class="mode === 'mistakes' ? 'text-white' : 'text-ink-muted dark:text-slate-400 hover:text-ink-main dark:hover:text-white'">
+                    <i data-lucide="book-x" class="w-4 h-4 sm:w-5 sm:h-5"></i> 错题本 <span class="hidden sm:inline text-xs opacity-60 font-normal ml-1">C</span>
                 </button>
             </div>
         </div>
@@ -239,7 +245,7 @@
                                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide"
                                           :class="isShortAnswer ? 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400' : 'bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-400'">
                                         <i :data-lucide="isShortAnswer ? 'edit-3' : 'check-square'" class="w-3.5 h-3.5"></i>
-                                        {{ isShortAnswer ? '简答/操作题' : (isMultiSelect ? '多选题' : '单选题') }}
+                                        {{ isPracticingMistakes ? '错题练习 - ' : '' }}{{ isShortAnswer ? '简答/操作题' : (isMultiSelect ? '多选题' : '单选题') }}
                                     </span>
                                     
                                     <div class="flex items-center gap-3 text-sm font-semibold text-ink-muted dark:text-slate-400">
@@ -346,12 +352,17 @@
                                     </div>
 
                                     <div v-if="isShortAnswer" class="mb-4 relative z-10">
-                                        <div class="flex items-center gap-2 mb-3 text-amber-600 dark:text-amber-400 font-bold text-lg">
-                                            <i data-lucide="file-check-2" class="w-6 h-6"></i>
-                                            参考答案
+                                        <div class="flex items-center justify-between mb-3">
+                                            <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-bold text-lg">
+                                                <i data-lucide="file-check-2" class="w-6 h-6"></i>
+                                                参考答案
+                                            </div>
+                                            <button @click="addToMistakes(currentQuestion)" class="text-sm font-semibold flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-colors" :class="mistakes.some(m => m.question === currentQuestion.question && m.chapter === currentQuestion.chapter) ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400 cursor-not-allowed opacity-70' : 'bg-slate-100 text-ink-muted hover:bg-amber-100 hover:text-amber-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-amber-900/40 dark:hover:text-amber-400'">
+                                                <i data-lucide="book-x" class="w-4 h-4"></i>
+                                                {{ mistakes.some(m => m.question === currentQuestion.question && m.chapter === currentQuestion.chapter) ? '已在错题本中' : '加入错题本' }}
+                                            </button>
                                         </div>
-                                        <div class="text-ink-main dark:text-slate-200 bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-700 whitespace-pre-wrap leading-relaxed shadow-inner">
-                                            {{ currentQuestion.answer }}
+                                        <div class="text-ink-main dark:text-slate-200 bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-700 whitespace-pre-wrap leading-relaxed shadow-inner" v-html="formatExplanation(currentQuestion.answer)">
                                         </div>
                                     </div>
 
@@ -386,10 +397,10 @@
                         <!-- Settlement Card -->
                         <div v-else class="text-center py-10 animate-fade-in-up">
                             <div class="w-24 h-24 mx-auto bg-brand-100 dark:bg-brand-500/20 text-brand-500 rounded-full flex items-center justify-center mb-6 shadow-glass">
-                                <i data-lucide="award" class="w-12 h-12"></i>
+                                <i :data-lucide="isPracticingMistakes ? 'book-check' : 'award'" class="w-12 h-12"></i>
                             </div>
-                            <h2 class="text-3xl font-bold text-ink-main dark:text-white mb-2">章节练习完成！</h2>
-                            <p class="text-ink-muted dark:text-slate-400 mb-8">坚持就是胜利，继续保持！</p>
+                            <h2 class="text-3xl font-bold text-ink-main dark:text-white mb-2">{{ isPracticingMistakes ? '错题练习完成！' : '章节练习完成！' }}</h2>
+                            <p class="text-ink-muted dark:text-slate-400 mb-8">{{ isPracticingMistakes ? '做对的错题已自动移除，继续加油！' : '坚持就是胜利，继续保持！' }}</p>
 
                             <div class="flex justify-center gap-4 mb-10">
                                 <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 w-32">
@@ -406,10 +417,16 @@
                                 </div>
                             </div>
 
-                            <button @click="resetQuiz" class="bg-ink-main dark:bg-white hover:bg-black dark:hover:bg-slate-200 text-white dark:text-ink-main px-8 py-3.5 rounded-xl font-bold shadow-soft hover:shadow-glass hover:-translate-y-1 active:scale-95 transition-all-smooth inline-flex items-center gap-2 cursor-pointer">
-                                <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
-                                再刷一遍
-                            </button>
+                            <div class="flex justify-center gap-4">
+                                <button v-if="!isPracticingMistakes" @click="resetQuiz" class="bg-ink-main dark:bg-white hover:bg-black dark:hover:bg-slate-200 text-white dark:text-ink-main px-8 py-3.5 rounded-xl font-bold shadow-soft hover:shadow-glass hover:-translate-y-1 active:scale-95 transition-all-smooth inline-flex items-center gap-2 cursor-pointer">
+                                    <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                                    再刷一遍
+                                </button>
+                                <button v-else @click="setMode('mistakes')" class="bg-ink-main dark:bg-white hover:bg-black dark:hover:bg-slate-200 text-white dark:text-ink-main px-8 py-3.5 rounded-xl font-bold shadow-soft hover:shadow-glass hover:-translate-y-1 active:scale-95 transition-all-smooth inline-flex items-center gap-2 cursor-pointer">
+                                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                                    返回错题本
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div v-else class="text-center py-20 animate-fade-in-up">
@@ -423,7 +440,7 @@
             </div>
 
             <!-- REVIEW MODE -->
-            <div v-else class="glass-panel rounded-3xl p-6 sm:p-10 transition-all-smooth animate-fade-in-up" style="animation-delay: 0.2s">
+            <div v-else-if="mode === 'review'" class="glass-panel rounded-3xl p-6 sm:p-10 transition-all-smooth animate-fade-in-up" style="animation-delay: 0.2s">
                 
                 <!-- Inline Search in Review Mode -->
                 <div class="relative mb-8">
@@ -561,6 +578,80 @@
                                         </div>
                                         <div class="text-ink-muted dark:text-slate-300 text-[14px] whitespace-pre-wrap font-sans break-all leading-relaxed bg-white/40 dark:bg-slate-900/40 p-3 rounded border border-slate-200/50 dark:border-slate-700/50" v-html="formatExplanation(q.answer)"></div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- MISTAKES MODE -->
+            <div v-else-if="mode === 'mistakes'" class="glass-panel rounded-3xl p-6 sm:p-10 transition-all-smooth animate-fade-in-up" style="animation-delay: 0.2s">
+                <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-200/60 dark:border-slate-700/60">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 rounded-lg">
+                            <i data-lucide="book-x" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-ink-main dark:text-white">我的错题本</h3>
+                            <p class="text-sm font-medium text-ink-muted dark:text-slate-400 mt-0.5">共 {{ mistakes.length }} 道错题待攻克</p>
+                        </div>
+                    </div>
+                    <button v-if="mistakes.length > 0" @click="startMistakesPractice" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-xl font-bold shadow-soft hover:shadow-glass hover:-translate-y-0.5 active:scale-95 transition-all-smooth flex items-center gap-2 text-sm sm:text-base cursor-pointer">
+                        <i data-lucide="play" class="w-4 h-4"></i> 练习错题
+                    </button>
+                </div>
+
+                <div v-if="mistakes.length === 0" class="text-center py-16">
+                    <div class="w-24 h-24 mx-auto bg-teal-50 dark:bg-teal-900/20 text-teal-500 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="check-circle" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ink-main dark:text-white mb-2">太棒了！错题本是空的</h3>
+                    <p class="text-ink-muted dark:text-slate-400 font-medium">继续保持这个状态，你的实力无懈可击</p>
+                </div>
+
+                <div v-else class="space-y-6">
+                    <div v-for="(q, idx) in mistakes" :key="'mistake-'+idx" class="glass-card p-5 sm:p-6 rounded-2xl shadow-sm hover:shadow-glass transition-all-smooth relative overflow-hidden group text-left">
+                        <div class="absolute top-0 right-0 flex items-center bg-slate-100 dark:bg-slate-800 rounded-bl-lg overflow-hidden border-b border-l border-slate-200 dark:border-slate-700 z-10">
+                            <div class="px-3 py-1.5 text-xs font-bold text-ink-muted dark:text-slate-400 max-w-[150px] sm:max-w-[200px] truncate" :title="q.chapter">
+                                {{ q.chapter }}
+                            </div>
+                            <button @click="removeFromMistakes(q)" class="px-3 py-1.5 bg-rose-50 dark:bg-rose-900/30 text-rose-500 hover:bg-rose-500 hover:text-white transition-colors border-l border-slate-200 dark:border-slate-700 text-xs font-bold flex items-center gap-1 cursor-pointer">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> 移除
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center gap-2 mb-3 mt-4 sm:mt-2">
+                            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold"
+                                  :class="q.type === 'sa' ? 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400' : 'bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-400'">
+                                <i :data-lucide="q.type === 'sa' ? 'edit-3' : 'check-square'" class="w-3 h-3"></i>
+                                {{ q.type === 'sa' ? '简答题' : '选择题' }}
+                            </span>
+                        </div>
+
+                        <div class="font-bold text-lg text-ink-main dark:text-white mb-4 leading-relaxed pr-8">
+                            {{ q.question }}
+                        </div>
+
+                        <div v-if="q.type === 'mcq'" class="pl-4 mb-4 space-y-1.5 border-l-2 border-slate-200 dark:border-slate-700">
+                            <div v-for="opt in q.options" :key="opt" class="text-sm text-ink-muted dark:text-slate-300">{{ opt }}</div>
+                        </div>
+
+                        <div class="bg-teal-50 dark:bg-teal-900/20 p-4 rounded-xl border border-teal-100 dark:border-teal-800/50">
+                            <div class="font-bold text-teal-700 dark:text-teal-400 flex items-start sm:items-center gap-2">
+                                <i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0 mt-0.5 sm:mt-0"></i>
+                                <div>
+                                    <span class="mr-2">正确答案：</span>
+                                    <span v-if="q.type === 'mcq'" class="bg-white dark:bg-teal-950 px-2 py-0.5 rounded border border-teal-200 dark:border-teal-800">{{ q.answer }}</span>
+                                </div>
+                            </div>
+                            <div v-if="q.type === 'sa'" class="mt-2 text-teal-700/90 dark:text-teal-300/90 text-sm bg-white/60 dark:bg-teal-950/40 p-3 rounded-lg border border-teal-100/50 dark:border-teal-800/30 whitespace-pre-wrap leading-relaxed" v-html="formatExplanation(q.answer)"></div>
+
+                            <div v-if="q.explanation" class="text-teal-700/80 dark:text-teal-300/80 text-sm mt-3 border-t border-teal-200/50 dark:border-teal-800/50 pt-3 flex flex-col gap-2">
+                                <div class="flex items-center gap-2 font-bold">
+                                    <i data-lucide="lightbulb" class="w-4 h-4 flex-shrink-0"></i> 解析：
+                                </div>
+                                <div class="bg-white/60 dark:bg-teal-950/40 p-3 rounded-lg border border-teal-100/50 dark:border-teal-800/30 overflow-x-auto">
+                                    <div class="whitespace-pre-wrap font-sans text-[14px] break-all leading-relaxed" v-html="formatExplanation(q.explanation)"></div>
                                 </div>
                             </div>
                         </div>
@@ -1527,6 +1618,54 @@
                 const correctCount = ref(0);
                 const wrongCount = ref(0);
 
+                const mistakes = ref([]);
+                const isPracticingMistakes = ref(false);
+
+                onMounted(() => {
+                    const saved = localStorage.getItem('mistakes');
+                    if (saved) {
+                        try {
+                            mistakes.value = JSON.parse(saved);
+                        } catch(e) {}
+                    }
+                });
+
+                watch(mistakes, (newVal) => {
+                    localStorage.setItem('mistakes', JSON.stringify(newVal));
+                }, { deep: true });
+
+                const addToMistakes = (q) => {
+                    const exists = mistakes.value.some(m => m.question === q.question && m.chapter === q.chapter);
+                    if (!exists) {
+                        mistakes.value.push(q);
+                    }
+                };
+
+                const removeFromMistakes = (q) => {
+                    mistakes.value = mistakes.value.filter(m => !(m.question === q.question && m.chapter === q.chapter));
+                };
+
+                const startMistakesPractice = () => {
+                    isPracticingMistakes.value = true;
+                    let questions = [...mistakes.value];
+                    for (let i = questions.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [questions[i], questions[j]] = [questions[j], questions[i]];
+                    }
+                    
+                    currentQuestions.value = questions;
+                    currentQIndex.value = 0;
+                    hasAnswered.value = false;
+                    showSettlement.value = false;
+                    selectedOptions.value = [];
+                    userAnswerText.value = "";
+                    correctCount.value = 0;
+                    wrongCount.value = 0;
+                    
+                    mode.value = 'quiz';
+                    renderIcons();
+                };
+
                 const isDark = ref(false);
 
                 // Search features
@@ -1639,6 +1778,7 @@
                 watch(searchResults, renderIcons);
 
                 const buildQuestionList = () => {
+                    isPracticingMistakes.value = false;
                     let questions = [];
                     let chapters = [];
                     
@@ -1650,10 +1790,10 @@
                     
                     chapters.forEach(ch => {
                         if (ch.mcqs) {
-                            ch.mcqs.forEach(q => questions.push({...q, type: 'mcq'}));
+                            ch.mcqs.forEach(q => questions.push({...q, type: 'mcq', chapter: ch.chapter}));
                         }
                         if (ch.short_answers) {
-                            ch.short_answers.forEach(q => questions.push({...q, type: 'sa'}));
+                            ch.short_answers.forEach(q => questions.push({...q, type: 'sa', chapter: ch.chapter}));
                         }
                     });
                     
@@ -1738,8 +1878,15 @@
                         isCorrect.value = correct.includes(selectedOptions.value[0]);
                     }
 
-                    if(isCorrect.value) correctCount.value++;
-                    else wrongCount.value++;
+                    if(isCorrect.value) {
+                        correctCount.value++;
+                        if (isPracticingMistakes.value) {
+                            removeFromMistakes(currentQuestion.value);
+                        }
+                    } else {
+                        wrongCount.value++;
+                        addToMistakes(currentQuestion.value);
+                    }
                 };
 
                 const showAnswer = () => {
@@ -1807,7 +1954,8 @@
                     correctCount, wrongCount,
                     isDark, toggleDarkMode,
                     isSearchOpen, openSearch, closeSearch,
-                    searchQuery, searchResults, highlight, searchInput
+                    searchQuery, searchResults, highlight, searchInput,
+                    mistakes, isPracticingMistakes, addToMistakes, removeFromMistakes, startMistakesPractice, formatExplanation
                 }
             }
         }).mount('#app')
