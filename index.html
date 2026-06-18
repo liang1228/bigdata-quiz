@@ -1065,7 +1065,7 @@
             },
             {
                 "question": "编写程序实现对HDFS文件的读写。",
-                "answer": "可以使用 Java API（如 `FileSystem.get()` 获得HDFS系统实例，使用 `FSDataInputStream` 读取数据，使用 `FSDataOutputStream` 写入数据）完成相关编程。",
+                "answer": "可以使用 Java API（如 `FileSystem.get()` 获得HDFS系统实例，使用 `FSDataInputStream` 读取数据，使用 `FSDataOutputStream` 写入数据）完成相关编程。完整的Java代码实现如下：\n```java\nimport java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport org.apache.hadoop.conf.Configuration;\nimport org.apache.hadoop.fs.FSDataInputStream;\nimport org.apache.hadoop.fs.FSDataOutputStream;\nimport org.apache.hadoop.fs.FileSystem;\nimport org.apache.hadoop.fs.Path;\npublic class HDFSExample {\npublic static void main(String[] args) {\ntry {\n// 1. 初始化配置并获取HDFS FileSystem实例\nConfiguration conf = new Configuration();\n// 注意：如果在本地运行，需要指定HDFS的URI，例如 conf.set(\"fs.defaultFS\", \"hdfs://localhost:9000\");\nFileSystem fs = FileSystem.get(conf);\n// 2. 定义HDFS上的文件路径\nPath filePath = new Path(\"/user/hadoop/test.txt\");\n// 3. 写入数据到HDFS文件\nFSDataOutputStream out = fs.create(filePath, true); // true表示覆盖同名文件\nString writeData = \"Hello HDFS!\\nThis is a test file.\\n\";\nout.write(writeData.getBytes(\"UTF-8\"));\nout.close();\nSystem.out.println(\"数据成功写入到HDFS: \" + filePath);\n// 4. 从HDFS文件读取数据\nFSDataInputStream in = fs.open(filePath);\nBufferedReader reader = new BufferedReader(new InputStreamReader(in, \"UTF-8\"));\nSystem.out.println(\"从HDFS读取的数据内容：\");\nString line;\nwhile ((line = reader.readLine()) != null) {\nSystem.out.println(line);\n}\nreader.close();\nin.close();\n// 5. 关闭文件系统实例\nfs.close();\n} catch (Exception e) {\ne.printStackTrace();\n}\n}\n}\n```",
                 "type": "short-answer"
             }
         ]
