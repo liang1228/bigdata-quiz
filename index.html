@@ -582,6 +582,7 @@
                             </div>
                         </div>
                 </div>
+                </div>
             </div>
 
             <!-- MISTAKES MODE -->
@@ -816,18 +817,21 @@
                 "answer": "A",
                 "explanation": "Mac OS 基于 Unix (Mach和FreeBSD)，而不是通常意义上的 Linux 发行版。CentOS、Ubuntu和RedHat都是常见的Linux发行版。",
                 "type": "multiple-choice"
-            }
-        ],
-        "short_answers": [
+            },
             {
                 "question": "下列模式中不属于VMware Workstation 提供的网络模式的是（ ）",
                 "options": [
-                    "A. 桥接模式   B. 仅主机模式   C. NAT模式    D. 容器模式"
+                    "A. 桥接模式",
+                    "B. 仅主机模式",
+                    "C. NAT模式",
+                    "D. 容器模式"
                 ],
                 "answer": "D",
                 "explanation": "VMware提供的常见网络模式为桥接模式 (Bridged)、仅主机模式 (Host-Only) 和 NAT模式。容器模式通常与Docker等容器技术相关，不是VMware的传统网络模式。",
                 "type": "multiple-choice"
-            },
+            }
+        ],
+        "short_answers": [
             {
                 "question": "简述大数据集群系统。",
                 "answer": "大数据集群系统是指将多台计算机节点通过局域网连接起来，作为一个整体协同工作，共同完成海量数据的存储和计算任务的系统。它可以提供高可用性、高容错性和横向扩展能力。",
@@ -850,7 +854,7 @@
             },
             {
                 "question": "简述大数据集群技术的架构。",
-                "answer": "基础设施层（物理机、虚拟机、网络）、数据存储层（如HDFS、HBase）、资源调度层（如YARN）、计算处理层（如MapReduce、Spark、Flink）以及数据查询与分析层（如Hive、Pig）。\n实践任务:",
+                "answer": "基础设施层（物理机、虚拟机、网络）、数据存储层（如HDFS、HBase）、资源调度层（如YARN）、计算处理层（如MapReduce、Spark、Flink）以及数据查询与分析层（如Hive、Pig）。",
                 "type": "short-answer"
             },
             {
@@ -920,18 +924,21 @@
                 "answer": "C",
                 "explanation": "`start-dfs.sh` 用于启动HDFS集群，`start-yarn.sh` 启动YARN，`start-all.sh` 启动所有服务。Hadoop中不存在 `start-hdfs.sh` 这个命令。",
                 "type": "multiple-choice"
-            }
-        ],
-        "short_answers": [
+            },
             {
                 "question": "（单选题） Hadoop3.X的Web Ui端口号是（ ）",
                 "options": [
-                    "A. 50070      B. 9870        C. 10002      D. 9000"
+                    "A. 50070",
+                    "B. 9870",
+                    "C. 10002",
+                    "D. 9000"
                 ],
                 "answer": "B",
                 "explanation": "Hadoop 2.x 时代 NameNode Web UI 的默认端口是 50070，而在 Hadoop 3.x 版本中已更改为 9870。",
                 "type": "multiple-choice"
-            },
+            }
+        ],
+        "short_answers": [
             {
                 "question": "简述Hadoop系统及其优点。",
                 "answer": "高可靠性（多副本机制）、高容错性（任务失败自动重新调度）、高扩展性（方便横向添加节点）、低成本（基于普通商用机器集群）。",
@@ -944,7 +951,7 @@
             },
             {
                 "question": "简述Hadoop技术生态系统。",
-                "answer": "底层核心是HDFS（存储）和YARN（资源管理）；计算引擎包括MapReduce、Spark等；NoSQL数据库如HBase；数据仓库工具如Hive；数据流处理工具如Flume；数据交换工具如Sqoop；协调服务如ZooKeeper等。\n实践任务:",
+                "answer": "底层核心是HDFS（存储）和YARN（资源管理）；计算引擎包括MapReduce、Spark等；NoSQL数据库如HBase；数据仓库工具如Hive；数据流处理工具如Flume；数据交换工具如Sqoop；协调服务如ZooKeeper等。",
                 "type": "short-answer"
             },
             {
@@ -1021,18 +1028,21 @@
                 "answer": "D",
                 "explanation": "HDFS 采用了“一次写入，多次读取”的数据模型，不支持文件的随机修改（只能追加写入），特别适合大规模数据分析类的应用。",
                 "type": "multiple-choice"
-            }
-        ],
-        "short_answers": [
+            },
             {
                 "question": "HDFS中Block 默认的保存策略是（ ）份",
                 "options": [
-                    "A. 3          B. 1           C. 2          D. 5"
+                    "A. 3",
+                    "B. 1",
+                    "C. 2",
+                    "D. 5"
                 ],
                 "answer": "A",
                 "explanation": "HDFS的默认副本数配置是3（1份主副本+2份备份），以保证数据的高可靠性。",
                 "type": "multiple-choice"
-            },
+            }
+        ],
+        "short_answers": [
             {
                 "question": "简述HDFS的体系架构。",
                 "answer": "HDFS采用Master/Slave架构。主要包括NameNode、DataNode和Client。NameNode是主节点，负责管理文件系统的命名空间和客户端对文件的访问；DataNode是从节点，负责存储实际的数据块（Block）；Client是客户端程序。此外还有SecondaryNameNode辅助合并元数据日志。",
@@ -1134,18 +1144,21 @@
                 "answer": "A, B, C, D",
                 "explanation": "以上选项涵盖了MapReduce完整的执行生命周期。",
                 "type": "multiple-select"
-            }
-        ],
-        "short_answers": [
+            },
             {
                 "question": "(多选题)下列关于MapReduce 工作机制的描述,说法正确的有 （ ）",
                 "options": [
-                    "A. 用户编写的MapReduce程序通过Client提交到JobTracker端 B. JobTracker负责资源监控和作业调度 C. Job Scheduler负责任务的调度和初始化 D. TaskTracker 使用“slot”等量划分本节点上的资源量"
+                    "A. 用户编写的MapReduce程序通过Client提交到JobTracker端",
+                    "B. JobTracker负责资源监控和作业调度",
+                    "C. Job Scheduler负责任务的调度和初始化",
+                    "D. TaskTracker 使用“slot”等量划分本节点上的资源量"
                 ],
                 "answer": "A, B, C, D",
                 "explanation": "描述了经典MapReduce框架（Hadoop 1.x）中的工作机制。YARN架构中JobTracker的功能已被ResourceManager替代，但经典架构的描述均是正确的。",
-                "type": "multiple-choice"
-            },
+                "type": "multiple-select"
+            }
+        ],
+        "short_answers": [
             {
                 "question": "简述MapReduce的架构。 - 经典架构中：JobTracker（主）负责资源管理和作业调度；TaskTracker（从）负责执行具体的任务。 - YARN架构中：ResourceManager负责集群资源管理；ApplicationMaster负责具体应用程序的调度和监控；NodeManager负责单节点资源管理和容器运行。",
                 "answer": "",
@@ -1235,18 +1248,21 @@
                 "answer": "C",
                 "explanation": "HBase底层存储是基于HDFS的，而不是基于MapReduce。MapReduce只是HBase之上的一种可选的数据计算分析框架。",
                 "type": "multiple-choice"
-            }
-        ],
-        "short_answers": [
+            },
             {
                 "question": "关于HBase Shell命令解释错误的是（ ）",
                 "options": [
-                    "A. put：插入记录 B. drop：删除表 C. get：读取表数据 D. alter：修改表数据"
+                    "A. put：插入记录",
+                    "B. drop：删除表",
+                    "C. get：读取表数据",
+                    "D. alter：修改表数据"
                 ],
                 "answer": "D",
                 "explanation": "`alter` 命令用于修改表的结构（如添加、修改、删除列族等元数据操作），修改表里面的具体数据记录应继续使用 `put` 命令去覆盖。",
                 "type": "multiple-choice"
-            },
+            }
+        ],
+        "short_answers": [
             {
                 "question": "简述Write-Ahead-Log的作用。",
                 "answer": "预写式日志（WAL）主要用于容错和灾难恢复。HBase在将数据写入内存（MemStore）之前，会先将操作记录写入WAL。如果RegionServer宕机导致内存数据丢失，可以通过回放WAL中的日志来恢复未持久化到磁盘的数据，保证数据不丢失。",
@@ -1348,18 +1364,21 @@
                 "answer": "A, C, D",
                 "explanation": "Spark的核心优势在于基于内存的计算、高效的DAG任务调度以及丰富的API算子。它是分布式计算框架，而不是“数据集中式”计算，因此B描述错误。",
                 "type": "multiple-select"
-            }
-        ],
-        "short_answers": [
+            },
             {
                 "question": "（多选题）Spark的运行架构包括（ ）",
                 "options": [
-                    "A. 负责任务执行的Executor B. 负责控制一个应用执行的 Driver C. 负责整个集群管理的 Master D. 负责计算节点任务的 Worker"
+                    "A. 负责任务执行的Executor",
+                    "B. 负责控制一个应用执行的 Driver",
+                    "C. 负责整个集群管理的 Master",
+                    "D. 负责计算节点任务的 Worker"
                 ],
                 "answer": "A, B, C, D",
                 "explanation": "在Spark的Standalone模式运行架构中，上述四个组件均是其核心构成部分。",
-                "type": "multiple-choice"
-            },
+                "type": "multiple-select"
+            }
+        ],
+        "short_answers": [
             {
                 "question": "简述Spark开源框架及其特点。 1) 速度快：基于内存计算，支持DAG图调度，速度远快于MapReduce。 2) 易用性好：提供超过80种高级算子，支持Scala、Java、Python和R。 3) 通用性强：包含了批处理(Core)、交互式查询(SQL)、流处理(Streaming)和机器学习(MLlib)等一栈式处理组件。 4) 兼容性好：可运行于YARN、Mesos等管理器上，可读取HDFS、HBase等数据。",
                 "answer": "",
@@ -1432,18 +1451,21 @@
                 "answer": "A, D",
                 "explanation": "`spark.mllib` 包含的是基于底层RDD的原始算法API，而从Spark 2.0开始进入维护模式。`spark.ml` 提供了基于DataFrame的高层次API。因此B、C说法相反，A、D说法正确。",
                 "type": "multiple-select"
-            }
-        ],
-        "short_answers": [
+            },
             {
                 "question": "（多选题）Spark MLlib提供的数据类型有（ ）",
                 "options": [
-                    "A. Local vector B. Labeled point C. IndexedRowMatrix D. BlockMatrix"
+                    "A. Local vector",
+                    "B. Labeled point",
+                    "C. IndexedRowMatrix",
+                    "D. BlockMatrix"
                 ],
                 "answer": "A, B, C, D",
                 "explanation": "Spark MLlib提供了多种分布式和本地数据结构类型，包括本地向量（密集/稀疏）、带有标签的数据点（Labeled point），以及分布式的矩阵形式。",
-                "type": "multiple-choice"
-            },
+                "type": "multiple-select"
+            }
+        ],
+        "short_answers": [
             {
                 "question": "简述机器学习的基本概念。",
                 "answer": "机器学习是人工智能的核心领域，专门研究计算机怎样模拟人类的学习行为，以获取新的知识或技能，从而重新组织已有的知识结构使之不断改善自身的性能。其核心是通过数据训练模型，进而对未知数据进行预测或分类。",
@@ -1521,18 +1543,21 @@
                 "answer": "D",
                 "explanation": "命令中使用了 `overwrite` 关键字，这意味着新导入的数据将覆盖目标表中原有的数据，而不是以追加(append)的方式装载数据。",
                 "type": "multiple-choice"
-            }
-        ],
-        "short_answers": [
+            },
             {
                 "question": "（多选题）Hive主要由哪几个部分组成（ ）",
                 "options": [
-                    "A. CLI        B. HWI         C. Thrift Server D. Metastore"
+                    "A. CLI",
+                    "B. HWI",
+                    "C. Thrift Server",
+                    "D. Metastore"
                 ],
                 "answer": "A, B, C, D",
                 "explanation": "Hive主要组件包括不同的用户访问接口（如CLI命令行、HWI网页界面、Thrift Server远程客户端接口），以及存储表结构和元数据的Metastore等。",
-                "type": "multiple-choice"
-            },
+                "type": "multiple-select"
+            }
+        ],
+        "short_answers": [
             {
                 "question": "简述Hive的组成及执行流程。 - 组成: 包括用户接口（CLI等）、元数据存储（Metastore）、以及核心引擎（解析器、编译器、优化器、执行器）。 - 执行流程: 用户提交HQL查询给Driver；Driver结合Metastore中的元数据将其解析、编译并优化为逻辑执行计划；然后转换为物理执行计划（通常是MapReduce任务的DAG图）；最后将任务提交给Hadoop集群执行，执行完成后返回结果。",
                 "answer": "",
