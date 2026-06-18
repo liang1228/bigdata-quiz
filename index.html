@@ -1808,8 +1808,10 @@
                 });
                 
                 const getCorrectLetters = () => {
-                    const ans = currentQuestion.value.answer || "";
-                    return ans.match(/[A-E]/g) || [];
+                    let ans = currentQuestion.value.answer || "";
+                    ans = ans.split('(')[0].split('（')[0];
+                    const letters = ans.match(/[A-E]/g) || [];
+                    return [...new Set(letters)];
                 };
 
                 const isMultiSelect = computed(() => {
