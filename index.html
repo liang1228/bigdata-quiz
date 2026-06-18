@@ -1745,13 +1745,11 @@
                     if (!text) return "";
                     let parsed = text;
                     // 1. Parse code blocks: ```lang ... ```
-                    parsed = parsed.replace(/```(\w*)
-([\s\S]*?)```/g, function(match, lang, code) {
+                    parsed = parsed.replace(/```(\w*)\n([\s\S]*?)```/g, function(match, lang, code) {
                         return '<pre class="bg-slate-800 dark:bg-slate-900 text-slate-200 p-3 rounded-xl overflow-x-auto my-2 text-[13px] font-mono leading-relaxed border border-slate-700/50">' + code.trim() + '</pre>';
                     });
                     // 2. Parse inline code: `code`
-                    parsed = parsed.replace(/`([^`
-]+)`/g, '<code class="bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 px-1.5 py-0.5 rounded text-[13px] font-bold border border-brand-200/50 dark:border-brand-800/50">$1</code>');
+                    parsed = parsed.replace(/`([^`\n]+)`/g, '<code class="bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 px-1.5 py-0.5 rounded text-[13px] font-bold border border-brand-200/50 dark:border-brand-800/50">$1</code>');
                     return parsed;
                 };
 
