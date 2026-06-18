@@ -757,36 +757,145 @@
         const quizData = [
     {
         "chapter": "第1章 大数据概论",
-        "mcqs": [],
+        "mcqs": [
+            {
+                "question": "（多选题）以下选项中不属于大数据特点的是（ ）",
+                "options": [
+                    "A. 数据量大",
+                    "B. 价值密度高",
+                    "C. 速度快",
+                    "D. 价值高"
+                ],
+                "answer": "B",
+                "explanation": "大数据的特点不包括\"价值密度高\"，实际是价值密度低。数据量可能很大，但其中有价值的信息比例较低。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）以下选项中不属于大数据的存储方式的是（ ）",
+                "options": [
+                    "A. 分布式系统",
+                    "B. NoSQL数据库",
+                    "C. 云数据库",
+                    "D. Microsoft Office Access"
+                ],
+                "answer": "D",
+                "explanation": "Microsoft Office Access是桌面级小型关系数据库，不属于大数据存储方式。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（原题标注多选题，按题意实际仅选1项）1ZB表示的是（ ）",
+                "options": [
+                    "A. 1024TB",
+                    "B. 1024PB",
+                    "C. 1024GB",
+                    "D. 1024EB"
+                ],
+                "answer": "D（原题标注多选，实际仅 D）",
+                "explanation": "课件第1章给出的单位换算为1024PB=1EB，1024EB=1ZB，因此1ZB等于1024EB，应选D。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（原题标注多选题，按题意实际仅选1项）维克托·迈尔-舍恩伯格在《大数据时代》一书中提出：大数据不用（ ）分析方法对数据进行分析。",
+                "options": [
+                    "A. 随机采样",
+                    "B. 全数据分析",
+                    "C. 聚类分析",
+                    "D. 分类分析"
+                ],
+                "answer": "A（原题标注多选，实际仅 A）",
+                "explanation": "题干问“大数据不用哪种分析方法”。《大数据时代》强调从随机采样转向全数据分析，因此不用的是随机采样；全数据分析是大数据采用的思路。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）以下选项中不属于大数据的分布式计算框架的是（ ）",
+                "options": [
+                    "A. MapReduce",
+                    "B. Storm/JStorm",
+                    "C. SamzaSpark",
+                    "D. Microsoft Excel"
+                ],
+                "answer": "D",
+                "explanation": "Microsoft Excel是桌面电子表格软件，不是分布式计算框架。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）大数据主要有哪几种计算模式（ ）",
+                "options": [
+                    "A. 批处理计算",
+                    "B. 查询计算",
+                    "C. 流式计算",
+                    "D. 图计算"
+                ],
+                "answer": "ABCD",
+                "explanation": "",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）下列属于流式计算框架的是（ ）",
+                "options": [
+                    "A. Storm",
+                    "B. Dremel",
+                    "C. Spark Streaming",
+                    "D. Pregel"
+                ],
+                "answer": "AC",
+                "explanation": "Storm和Spark Streaming是流式计算框架；Dremel是交互查询引擎；Pregel是图计算框架。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）大数据处理思维方式转变包括（ ）",
+                "options": [
+                    "A. 精确而非全面",
+                    "B. 相关而非因果",
+                    "C. 效率而非精确",
+                    "D. 全量而非抽样"
+                ],
+                "answer": "BCD",
+                "explanation": "",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）图灵奖获得者、著名数据库专家Jim Gray博士认为，人类自古以来在科学研究上先后经历了哪几种方式（ ）",
+                "options": [
+                    "A. 实验科学",
+                    "B. 计算密集型科学",
+                    "C. 理论科学",
+                    "D. 数据科学"
+                ],
+                "answer": "ABCD",
+                "explanation": "Jim Gray提出的第四范式——数据密集型科学发现（Data-Intensive Scientific Discovery）。",
+                "type": "multiple-select"
+            }
+        ],
         "short_answers": [
             {
                 "question": "简述大数据的概念。",
-                "answer": "大数据是指无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合，是需要新处理模式才能具有更强的决策力、洞察发现力和流程优化能力的海量、高增长率和多样化的信息资产。",
+                "answer": "参考答案： 大数据是指规模巨大、类型多样、处理迅速的数据集合，需要使用分布式计算架构进行采集、存储、处理和分析，以挖掘其潜在价值。",
                 "type": "short-answer"
             },
             {
                 "question": "简述大数据的基本特征。",
-                "answer": "大数据的特征通常被概括为“4V”或“5V”：\n- Volume (数据量大): 数据规模从TB级别跃升到PB级别甚至更高。\n- Velocity (处理速度快): 数据产生速度快，要求快速处理，体现出实时性。\n- Variety (数据类型繁多): 包括结构化、半结构化和非结构化数据（如文本、音频、视频等）。\n- Value (价值密度低): 单条数据价值较小，但海量数据经过深度分析后价值巨大。\n- Veracity (真实性): 数据的质量与可靠性。",
+                "answer": "参考答案： 大数据具有4V特性：(1)数据量大（Volume）——数据规模从TB到ZB级别；(2)速度快（Velocity）——数据产生和处理速度快，实时性要求高；(3)类型多（Variety）——包括结构化、半结构化和非结构化数据；(4)价值密度低（Value）——海量数据中有价值信息的密度较低，需要通过分析挖掘。",
                 "type": "short-answer"
             },
             {
-                "question": "简述大数据的分析处理过程。",
-                "answer": "大数据分析处理过程通常包括：数据采集（从各种数据源获取数据）、数据存储与管理（将数据存储在HDFS、NoSQL等系统中）、数据处理与分析（使用MapReduce、Spark等进行数据清洗、分析、挖掘）、数据展现与应用（通过可视化工具展示分析结果，应用于具体业务中）。",
+                "question": "简述大数据的分析处理流程。",
+                "answer": "参考答案： 大数据处理流程包括：数据采集（ETL提取、转换、加载）→ 数据存储（分布式文件系统、NoSQL数据库等）→ 数据处理（批处理、流处理等）→ 数据分析（统计分析、数据挖掘、机器学习等）→ 数据可视化（图表、仪表盘等形式呈现）。",
                 "type": "short-answer"
             },
             {
                 "question": "简述大数据的存储方式。",
-                "answer": "大数据的存储方式主要包括：分布式文件系统（如HDFS）、NoSQL数据库（如HBase、MongoDB、Redis等）、云存储平台以及传统的关系型数据库（用于存储部分结构化的高价值数据）。",
+                "answer": "参考答案： 主要存储方式包括：(1)分布式文件系统（如HDFS、GFS）——适合存储大规模文件；(2)NoSQL数据库（如HBase、Cassandra、MongoDB）——适合非结构化/半结构化数据；(3)云存储（如阿里云OSS、AWS S3）；(4)MPP架构的分布式数据库。",
                 "type": "short-answer"
             },
             {
                 "question": "简述大数据的商业价值和社会价值。",
-                "answer": "- 商业价值: 帮助企业精准营销、优化供应链、降低运营成本、辅助商业决策、发现新市场和新业务模式。\n- 社会价值: 提升政府治理能力、改善智慧城市建设（如交通调度、环保监测）、推动医疗健康（疾病预测、个性化治疗）和教育等公共服务的发展。",
+                "answer": "参考答案： 商业价值体现在精准营销、客户画像、风险控制、供应链优化、运营降本和辅助决策；社会价值体现在智慧城市、交通治理、医疗健康、教育评价、公共安全和环境监测等方面。风险包括隐私保护、数据安全、算法偏见和数据质量问题。",
                 "type": "short-answer"
             },
             {
                 "question": "以某一行业为例，简述大数据的应用。",
-                "answer": "以医疗行业为例。大数据可应用于：1) 电子病历分析：通过对海量病历的挖掘，辅助医生诊断；2) 疾病预测与预警：通过分析公共卫生数据和环境数据，预测传染病爆发趋势；3) 个性化治疗：基于患者的基因数据和病史，制定个性化的治疗方案；4) 药物研发：利用数据分析加速药物筛选和临床试验分析。",
+                "answer": "参考答案： 以电商行业为例：(1)个性化推荐系统——通过用户浏览、购买、收藏等行为数据，构建用户画像，实现千人千面的商品推荐，如淘宝\"猜你喜欢\"；(2)供应链优化——基于历史销售数据、季节因素、地域差异预测需求，优化库存管理；(3)用户流失预警——分析用户活跃度变化，提前识别流失风险用户并进行干预；(4)动态定价——根据市场需求、竞品价格、用户行为实时调整价格策略。",
                 "type": "short-answer"
             }
         ]
@@ -795,7 +904,7 @@
         "chapter": "第2章 大数据集群系统基础",
         "mcqs": [
             {
-                "question": "Linux 系统中用于创建目录的命令是（ ）",
+                "question": "Linux系统用于创建目录的命令是（ ）",
                 "options": [
                     "A. ls",
                     "B. mkdir",
@@ -803,11 +912,11 @@
                     "D. rmdir"
                 ],
                 "answer": "B",
-                "explanation": "`ls`用于查看目录内容，`pwd`用于显示当前工作目录，`rmdir`用于删除空目录，`mkdir`用于创建新目录。",
+                "explanation": "",
                 "type": "multiple-choice"
             },
             {
-                "question": "下列选项中不属于虚拟化软件是（ ）",
+                "question": "以下选项中不属于虚拟化软件的是（ ）",
                 "options": [
                     "A. VirtualBox",
                     "B. VMware Workstation",
@@ -815,11 +924,11 @@
                     "D. Microsoft Edge"
                 ],
                 "answer": "D",
-                "explanation": "Microsoft Edge 是网页浏览器，不是虚拟化软件。",
+                "explanation": "Microsoft Edge是网页浏览器，不是虚拟化软件。",
                 "type": "multiple-choice"
             },
             {
-                "question": "Hadoop的分布式文件系统中数据存储的基础是（ ）",
+                "question": "Hadoop的分布式文件系统HDFS数据存储的基础是（ ）",
                 "options": [
                     "A. MapReduce",
                     "B. HBase",
@@ -827,19 +936,19 @@
                     "D. Hive"
                 ],
                 "answer": "C",
-                "explanation": "HDFS (Hadoop Distributed File System) 是 Hadoop 的核心组件之一，是分布式数据存储的基础。",
+                "explanation": "HDFS是Hadoop的分布式文件系统（Hadoop Distributed File System），是数据存储的基础。",
                 "type": "multiple-choice"
             },
             {
-                "question": "下列哪个不属于Linux 操作系统（ ）",
+                "question": "下面哪个不属于Linux操作系统（ ）",
                 "options": [
                     "A. Mac",
-                    "B. CenOS",
+                    "B. CentOS",
                     "C. Ubuntu",
                     "D. RedHat"
                 ],
                 "answer": "A",
-                "explanation": "Mac OS 基于 Unix (Mach和FreeBSD)，而不是通常意义上的 Linux 发行版。CentOS、Ubuntu和RedHat都是常见的Linux发行版。",
+                "explanation": "Mac是苹果公司的macOS操作系统，基于Unix但不属于Linux发行版。",
                 "type": "multiple-choice"
             },
             {
@@ -851,49 +960,49 @@
                     "D. 容器模式"
                 ],
                 "answer": "D",
-                "explanation": "VMware提供的常见网络模式为桥接模式 (Bridged)、仅主机模式 (Host-Only) 和 NAT模式。容器模式通常与Docker等容器技术相关，不是VMware的传统网络模式。",
+                "explanation": "VMware Workstation 提供桥接模式、仅主机模式和 NAT 模式；容器模式不是 VMware Workstation 的网络模式。",
                 "type": "multiple-choice"
             }
         ],
         "short_answers": [
             {
                 "question": "简述大数据集群系统。",
-                "answer": "大数据集群系统是指将多台计算机节点通过局域网连接起来，作为一个整体协同工作，共同完成海量数据的存储和计算任务的系统。它可以提供高可用性、高容错性和横向扩展能力。",
+                "answer": "参考答案： 大数据集群系统是由多台计算机通过网络互联，协同工作组成的分布式系统。通过分布式存储和并行计算技术，将大量普通服务器的计算和存储能力整合起来，对外提供高可靠性、高性能和高可扩展性的大数据处理服务。",
                 "type": "short-answer"
             },
             {
                 "question": "简述集群系统的分类。",
-                "answer": "集群系统主要分为三类：\n1) 高可用性集群 (HA)：旨在保证服务的不间断运行。\n2) 负载均衡集群 (LB)：将请求分发到多个节点，提高系统整体处理并发的能力。\n3) 高性能计算集群 (HPC)：主要用于大规模科学计算。",
+                "answer": "参考答案： 集群系统主要分为三类：(1)高性能集群（HPC）——将多台计算机的计算能力聚合，用于科学计算、仿真等需要大量计算资源的场景；(2)负载均衡集群——将请求分发到多台服务器，提高系统响应速度和并发处理能力；(3)高可用集群——通过冗余和故障转移机制，保证服务持续可用，减少宕机时间。",
                 "type": "short-answer"
             },
             {
                 "question": "简述Linux操作系统的特性。",
-                "answer": "Linux操作系统的特性包括：开源免费、多用户多任务、良好的硬件适配性、高稳定性和安全性、支持多种文件系统、丰富的网络功能和强大的命令行工具等。",
+                "answer": "参考答案： Linux的主要特性包括：(1)开源免费——源代码公开，可自由使用和修改；(2)多用户多任务——支持多个用户同时登录和运行多个程序；(3)安全稳定——权限管理严格，病毒少，系统稳定可长时间运行；(4)强大的网络功能——内置丰富的网络协议和服务；(5)良好的可移植性——支持多种硬件平台。",
                 "type": "short-answer"
             },
             {
                 "question": "简述计算机虚拟化技术及常见的虚拟化软件。",
-                "answer": "计算机虚拟化技术是指通过软件技术将一台物理计算机抽象为多台逻辑计算机（虚拟机），每台虚拟机可以独立运行操作系统和应用程序。常见的虚拟化软件有：VMware Workstation, VirtualBox, KVM, Hyper-V 等。",
+                "answer": "参考答案： 虚拟化技术通过软件把物理机资源抽象成多台虚拟机，每台虚拟机可独立运行操作系统和应用。常见软件包括 VMware Workstation、VirtualBox、KVM、Hyper-V 等，教学环境常用虚拟机搭建 Hadoop/Spark 集群。",
                 "type": "short-answer"
             },
             {
                 "question": "简述大数据集群技术的架构。",
-                "answer": "大数据集群技术架构通常包括：基础设施层（物理机、虚拟机、网络）、数据存储层（如HDFS、HBase）、资源调度层（如YARN）、计算处理层（如MapReduce、Spark、Flink）以及数据查询与分析层（如Hive、Pig）。",
+                "answer": "参考答案： 大数据集群技术架构按课件可概括为六层：硬件层、OS层、基础设施管理层、文件系统层、大数据集群技术层和应用层。硬件层提供服务器或云资源，OS层通常采用Linux；基础设施管理层负责资源管理、虚拟化和节点部署；文件系统层解决大规模数据存储；大数据集群技术层部署Hadoop、Spark、Storm等处理和资源调度组件；应用层通过可视化、推荐等业务应用呈现分析结果。\n三、操作实践（PPT补充）",
                 "type": "short-answer"
             },
             {
-                "question": "下载并完成VMware的安装。",
-                "answer": "解析: 此为动手实践题，请根据上课内容和老师要求自行完成软件安装与配置，无固定标准答案。",
+                "question": "下载并完成VMware 的安装。",
+                "answer": "来源：第2章 大数据集群系统基础，第 92 页\n参考答案：实践要点：下载匹配系统版本的 VMware Workstation，完成安装后启用虚拟网络适配器，确认 NAT/桥接/仅主机网络可用。考试或报告中重点写清安装版本、虚拟机创建和网络模式选择。",
                 "type": "short-answer"
             },
             {
                 "question": "完成ubuntu系统的安装并进行网络配置。",
-                "answer": "解析: 此为动手实践题，请根据上课内容和老师要求自行完成软件安装与配置，无固定标准答案。",
+                "answer": "来源：第2章 大数据集群系统基础，第 92 页\n参考答案：实践要点：创建 Ubuntu 虚拟机，分配 CPU、内存、磁盘，安装系统后配置静态 IP、主机名、hosts、DNS 和网络连通性。完成后应能 ping 通宿主机和其他节点。",
                 "type": "short-answer"
             },
             {
                 "question": "部署ubuntu集群、设置时间同步以及免密钥SSH配置。",
-                "answer": "核心重点在于“免密SSH配置”，使用 `ssh-keygen` 生成公私钥对，并将公钥追加到 `authorized_keys` 中，保证主节点可以无密码登录从节点。时间同步通常使用 `ntpdate` 或 `chrony` 服务。",
+                "answer": "来源：第2章 大数据集群系统基础，第 92 页\n参考答案：实践要点：按 master/slave 规划多台 Ubuntu 节点，配置主机名和 hosts，使用 ssh-keygen 与 authorized_keys 实现免密 SSH，使用 ntp/chrony 或 timedatectl 做时间同步。",
                 "type": "short-answer"
             }
         ]
@@ -902,7 +1011,7 @@
         "chapter": "第3章 Hadoop分布式系统",
         "mcqs": [
             {
-                "question": "（单选题）下面与HDFS类似的分布式文件系统是（ ）",
+                "question": "（单选题）下列与HDFS类似的分布式文件系统是（ ）",
                 "options": [
                     "A. NTFS",
                     "B. FAT32",
@@ -910,23 +1019,23 @@
                     "D. EXT3"
                 ],
                 "answer": "C",
-                "explanation": "GFS (Google File System) 是谷歌的分布式文件系统，HDFS正是开源社区基于GFS的设计思想开发的。NTFS, FAT32, EXT3都是单机文件系统。",
+                "explanation": "GFS（Google File System）是Google开发的分布式文件系统，是HDFS的设计原型。NTFS、FAT32、EXT3都是单机文件系统。",
                 "type": "multiple-choice"
             },
             {
-                "question": "（单选题）下列选项中不属于HDFS的组件是（ ）",
+                "question": "（单选题）以下选项中不属于HDFS组件的是（ ）",
                 "options": [
                     "A. NameNode",
                     "B. SecondaryNameNode",
-                    "C. DateNode",
+                    "C. DataNode",
                     "D. HRegionServer"
                 ],
                 "answer": "D",
-                "explanation": "HRegionServer是HBase数据库的组件，而NameNode、SecondaryNameNode和DataNode是HDFS的核心组件。",
+                "explanation": "HRegionServer是HBase数据库的组件，不属于HDFS。HDFS的核心组件为NameNode、SecondaryNameNode和DataNode。",
                 "type": "multiple-choice"
             },
             {
-                "question": "（单选题）以下哪个不是hadoop的特性（ ）",
+                "question": "（单选题）下面哪个不是Hadoop的特性（ ）",
                 "options": [
                     "A. 高成本",
                     "B. 高可靠性",
@@ -934,11 +1043,11 @@
                     "D. 高扩展性"
                 ],
                 "answer": "A",
-                "explanation": "Hadoop具有高可靠性、高容错性、高扩展性、高效性，并且能够部署在廉价的商用硬件集群上，因此它具有“低成本”的特性，而不是高成本。",
+                "explanation": "Hadoop的设计目标之一就是低成本——可以运行在普通廉价的PC服务器上。高可靠性、高容错性、高扩展性是Hadoop的核心特性。",
                 "type": "multiple-choice"
             },
             {
-                "question": "（单选题）已经配置好Hadoop环境变量，下列不是Hadoop启动命令的是（ ）",
+                "question": "（单选题）已经配置好Hadoop集群环境后，以下哪个不是Hadoop的启动命令（ ）",
                 "options": [
                     "A. start-dfs.sh",
                     "B. start-yarn.sh",
@@ -946,11 +1055,11 @@
                     "D. start-all.sh"
                 ],
                 "answer": "C",
-                "explanation": "`start-dfs.sh` 用于启动HDFS集群，`start-yarn.sh` 启动YARN，`start-all.sh` 启动所有服务。Hadoop中不存在 `start-hdfs.sh` 这个命令。",
+                "explanation": "Hadoop的正确启动命令为start-dfs.sh（启动HDFS）、start-yarn.sh（启动YARN）和start-all.sh（启动所有组件）。不存在start-hdfs.sh命令。",
                 "type": "multiple-choice"
             },
             {
-                "question": "（单选题） Hadoop3.X的Web Ui端口号是（ ）",
+                "question": "（单选题）Hadoop 3.X的Web UI端口号是（ ）",
                 "options": [
                     "A. 50070",
                     "B. 9870",
@@ -958,34 +1067,58 @@
                     "D. 9000"
                 ],
                 "answer": "B",
-                "explanation": "Hadoop 2.x 时代 NameNode Web UI 的默认端口是 50070，而在 Hadoop 3.x 版本中已更改为 9870。",
+                "explanation": "Hadoop 2.x的NameNode Web UI端口为50070；Hadoop 3.x改为9870。9000是NameNode RPC通信端口。",
                 "type": "multiple-choice"
+            },
+            {
+                "question": "（多选题）Hadoop主要包含以下哪些核心组件（ ）[推测题]",
+                "options": [
+                    "A. HDFS",
+                    "B. MapReduce",
+                    "C. YARN",
+                    "D. Hive"
+                ],
+                "answer": "ABC",
+                "explanation": "HDFS、MapReduce、YARN是Hadoop三大核心组件。Hive是Hadoop生态系统中的数据仓库工具。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）Hadoop的主要优势包括（ ）[推测题]",
+                "options": [
+                    "A. 高可靠性",
+                    "B. 高可扩展性",
+                    "C. 高效性",
+                    "D. 高容错性"
+                ],
+                "answer": "ABCD",
+                "explanation": "",
+                "type": "multiple-select"
             }
         ],
         "short_answers": [
             {
                 "question": "简述Hadoop系统及其优点。",
-                "answer": "Hadoop是一个开源的分布式计算平台，允许使用简单的编程模型在计算机集群上分布式处理大型数据集。优点包括：高可靠性（多副本机制）、高容错性（任务失败自动重新调度）、高扩展性（方便横向添加节点）、低成本（基于普通商用机器集群）。",
+                "answer": "参考答案： Hadoop 是用于分布式存储和并行计算的大数据开源框架，核心包括 HDFS、MapReduce 和 YARN。优点是低成本硬件可扩展、高可靠、高容错、适合海量离线数据处理，生态组件丰富。",
                 "type": "short-answer"
             },
             {
                 "question": "简述Hadoop原理及运行机制。",
-                "answer": "Hadoop的核心是HDFS和MapReduce/YARN。数据被分块存储在HDFS的多个DataNode上，NameNode负责元数据管理。执行计算时，YARN负责资源调度，将MapReduce计算任务分发到数据所在的节点上（计算向数据靠拢），实现海量数据的并行计算。",
+                "answer": "参考答案： Hadoop采用Master/Slave主从架构。核心原理：(1)HDFS分布式存储——NameNode（主节点）管理文件系统的元数据（目录结构、文件块映射等），DataNode（从节点）负责实际存储数据块，默认每个数据块有3个副本；(2)MapReduce分布式计算——JobTracker（主节点）负责任务调度和资源管理，TaskTracker（从节点）执行具体的Map任务和Reduce任务；(3)YARN资源管理——ResourceManager负责全局资源调度，NodeManager管理各节点资源，ApplicationMaster管理单个应用。",
                 "type": "short-answer"
             },
             {
-                "question": "简述Hadoop技术生态系统。",
-                "answer": "Hadoop生态系统包含多个相关项目：底层核心是HDFS（存储）和YARN（资源管理）；计算引擎包括MapReduce、Spark等；NoSQL数据库如HBase；数据仓库工具如Hive；数据流处理工具如Flume；数据交换工具如Sqoop；协调服务如ZooKeeper等。",
+                "question": "简述Hadoop的生态系统。",
+                "answer": "参考答案： Hadoop生态系统包含核心组件和周边项目。核心组件：(1)HDFS——分布式文件系统，提供高吞吐量的数据访问；(2)YARN——资源管理调度框架，支持多种计算框架；(3)MapReduce——分布式批处理计算模型。周边项目：(1)Hive——基于Hadoop的数据仓库工具，提供SQL-like查询；(2)HBase——分布式列式NoSQL数据库；(3)ZooKeeper——分布式协调服务；(4)Spark——基于内存计算的快速通用计算引擎；(5)Pig——数据流处理语言；(6)Flume——日志数据采集工具；(7)Sqoop——关系数据库与Hadoop之间的数据迁移工具；(8)Oozie——工作流调度系统。\n三、操作实践（PPT补充）",
                 "type": "short-answer"
             },
             {
                 "question": "安装和配置JDK。",
-                "answer": "解析: 此为动手实践题，请根据上课内容和老师要求自行完成软件安装与配置，无固定标准答案。",
+                "answer": "来源：第3章 Hadoop分布式系统，第 45 页\n参考答案：实践要点：安装 JDK，配置 JAVA_HOME、PATH，执行 java -version 验证。Hadoop 各节点必须使用兼容 Java 版本。",
                 "type": "short-answer"
             },
             {
                 "question": "安装和配置Hadoop。",
-                "answer": "Hadoop强依赖Java环境，因此必须配置 `JAVA_HOME`。配置Hadoop时主要修改 `core-site.xml`、`hdfs-site.xml`、`yarn-site.xml`、`mapred-site.xml`，以及 `hadoop-env.sh` 和 `workers`/`slaves` 文件。",
+                "answer": "来源：第3章 Hadoop分布式系统，第 45 页\n参考答案：实践要点：解压 Hadoop，配置 hadoop-env.sh、core-site.xml、hdfs-site.xml、mapred-site.xml、yarn-site.xml 和 workers，格式化 NameNode 后启动 HDFS/YARN 并访问 Web UI 验证。",
                 "type": "short-answer"
             }
         ]
@@ -1002,11 +1135,11 @@
                     "D. HDFS是一个高容错性的系统，适合部署在低廉的机器上"
                 ],
                 "answer": "A",
-                "explanation": "HDFS是为存储大文件而设计的，不适合大量小文件的存储。因为每个文件的元数据都要占用NameNode的内存，大量小文件会迅速耗尽NameNode内存资源。",
+                "explanation": "HDFS适合大文件存储（GB级别以上），不适合大量小文件的存储，因为每个文件的元数据会占用NameNode内存。",
                 "type": "multiple-choice"
             },
             {
-                "question": "分布式文件系统HDFS中，（ ）负责数据的存储和读取",
+                "question": "分布式文件系统HDFS中，（ ）负责数据的存储和读取。",
                 "options": [
                     "A. 名称节点",
                     "B. 主节点",
@@ -1014,23 +1147,23 @@
                     "D. 数据节点"
                 ],
                 "answer": "D",
-                "explanation": "数据节点 (DataNode) 负责实际数据的存储和响应客户端的读写请求。名称节点 (NameNode) 负责管理命名空间和元数据。",
+                "explanation": "DataNode（数据节点）负责实际的数据存储和读写；NameNode（名称节点）管理元数据；SecondaryNameNode辅助合并元数据。",
                 "type": "multiple-choice"
             },
             {
-                "question": "在HDFS根目录下创建一个文件夹/test，且/test文件夹内还包含一个文件夹hello，正确的shell命令是:（ ）",
+                "question": "在HDFS根目录下创建一个文件夹/test，且/test文件夹内还包含一个文件夹hello，正确的shell命令是（ ）",
                 "options": [
                     "A. hadoop dfs -mkdir /test/hello",
                     "B. hdfs fs -mkdir /test/hello",
                     "C. hadoop fs -mkdir /test/hello",
                     "D. hdfs dfs *mkdir /test/hello"
                 ],
-                "answer": "C (或A)",
-                "explanation": "最规范的命令是 `hadoop fs -mkdir -p /test/hello` 或 `hdfs dfs -mkdir -p /test/hello`。选项中C格式较正确（假设已缺省 `-p` 或单步执行）。选项A的 `hadoop dfs` 虽然可以使用但在新版本中被声明为已过时（deprecated）。",
+                "answer": "C",
+                "explanation": "-mkdir可带-p参数递归创建。命令前缀应为\"hadoop fs\"或\"hdfs dfs\"。选项C正确，选项B前缀有误，选项D中*为错误符号。",
                 "type": "multiple-choice"
             },
             {
-                "question": "上传当前目录下的本地文件test.txt到分布式文件系统HDFS的“/test”目录下的Shell命令是：（ ）",
+                "question": "上传当前目录下的本地文件test.txt到分布式文件系统HDFS的\"/test\"目录下的Shell命令是（ ）",
                 "options": [
                     "A. hdfs fs -put test.txt /test",
                     "B. hdfs dfs -put /test test.txt",
@@ -1038,23 +1171,23 @@
                     "D. hadoop dfs -put /test test.txt"
                 ],
                 "answer": "C",
-                "explanation": "上传命令的正确格式为 `hdfs dfs -put <本地源文件> <HDFS目标路径>`。选项C符合该格式。",
+                "explanation": "上传文件语法为 hdfs dfs -put <本地路径> <HDFS目标路径>。选项C参数顺序正确，选项B和D参数顺序颠倒。",
                 "type": "multiple-choice"
             },
             {
-                "question": "HDFS是基于流数据模式访问和处理文件的需求而开发的，具有高容错、高可靠性、高可扩展性、高吞吐率等特征，适合的读写任务是（ ）",
+                "question": "HDFS是基于流数据模式访问和处理超大文件的需求而开发的，具有高容错、高可靠性、高可扩展性、高吞吐率等特点，适合的读写任务是（ ）",
                 "options": [
-                    "A. 一次写入，一次读出",
-                    "B. 多次写入，一次读出",
-                    "C. 多次写入，多次读出",
-                    "D. 一次写入，多次读出"
+                    "A. 一次写入，一次读取",
+                    "B. 多次写入，一次读取",
+                    "C. 多次写入，多次读取",
+                    "D. 一次写入，多次读取"
                 ],
                 "answer": "D",
-                "explanation": "HDFS 采用了“一次写入，多次读取”的数据模型，不支持文件的随机修改（只能追加写入），特别适合大规模数据分析类的应用。",
+                "explanation": "HDFS的设计理念是\"一次写入，多次读取\"（Write Once, Read Many），适合批量写入后多次分析查询的场景，不支持随机写入和修改。",
                 "type": "multiple-choice"
             },
             {
-                "question": "HDFS中Block 默认的保存策略是（ ）份",
+                "question": "HDFS中Block默认的备份数量是（ ）",
                 "options": [
                     "A. 3",
                     "B. 1",
@@ -1062,34 +1195,34 @@
                     "D. 5"
                 ],
                 "answer": "A",
-                "explanation": "HDFS的默认副本数配置是3（1份主副本+2份备份），以保证数据的高可靠性。",
+                "explanation": "HDFS默认副本因子（dfs.replication）为3，即每个数据块默认保存3个副本。",
                 "type": "multiple-choice"
             }
         ],
         "short_answers": [
             {
                 "question": "简述HDFS的体系架构。",
-                "answer": "HDFS采用Master/Slave架构。主要包括NameNode、DataNode和Client。NameNode是主节点，负责管理文件系统的命名空间和客户端对文件的访问；DataNode是从节点，负责存储实际的数据块（Block）；Client是客户端程序。此外还有SecondaryNameNode辅助合并元数据日志。",
+                "answer": "参考答案： HDFS采用Master/Slave主从架构，主要由以下组件构成：(1)NameNode（名称节点）——主节点，管理文件系统的命名空间（目录结构、文件权限等），维护文件到数据块的映射关系，处理客户端的读写请求。所有元数据存储在内存中以保证高性能。(2)DataNode（数据节点）——从节点，负责实际存储数据块，执行数据块的读写操作，定期向NameNode发送心跳报告和块报告。(3)SecondaryNameNode（第二名称节点）——辅助节点（不是NameNode的热备份），定期从NameNode获取FsImage和EditLog进行合并，防止EditLog过大，并将合并结果返回给NameNode。",
                 "type": "short-answer"
             },
             {
                 "question": "简述HDFS读数据的流程。",
-                "answer": "(1) 客户端向NameNode发起读请求。(2) NameNode返回该文件各个数据块所在的DataNode列表（按距离排序）。(3) 客户端连接最近的DataNode读取数据块。(4) 逐块读取，直到整个文件读取完毕，流关闭。",
+                "answer": "参考答案： HDFS读数据流程：(1)客户端调用FileSystem.open()方法打开文件；(2)DistributedFileSystem通过RPC向NameNode发送请求，获取文件起始部分数据块的位置信息；(3)NameNode返回存储该文件数据块的DataNode列表（按与客户端的网络距离排序）；(4)客户端创建FSDataInputStream，选择距离最近的DataNode建立连接；(5)依次读取各个数据块（一个块读取完成后关闭与该DataNode的连接，接着读取下一个块）；(6)读取完成后调用FSDataInputStream.close()关闭输入流。如果读取过程中DataNode发生故障，客户端会自动切换到下一个拥有该副本的DataNode继续读取。",
                 "type": "short-answer"
             },
             {
                 "question": "简述HDFS写数据的流程。",
-                "answer": "(1) 客户端向NameNode发起写文件请求。(2) NameNode检查权限并分配DataNode列表用于存储副本。(3) 客户端将数据切分成块，并通过数据流管道（Pipeline）写入第一个DataNode。(4) 节点之间相互复制传递数据。(5) 复制完成后DataNode逐级返回确认信息。(6) 客户端完成写入。",
+                "answer": "参考答案： HDFS写数据流程：(1)客户端调用FileSystem.create()创建文件；(2)DistributedFileSystem通过RPC向NameNode发送创建请求，NameNode检查权限和文件是否已存在；(3)NameNode返回可写入的DataNode列表（形成数据管道pipeline）；(4)客户端创建FSDataOutputStream，开始写入数据；(5)数据以数据包（packet）的形式发送到管道中的第一个DataNode，该DataNode存储后再转发给第二个DataNode，依此类推；(6)每个DataNode写入完成后向上游发送确认信息（ACK）；(7)数据块写完后，客户端通知NameNode完成，NameNode更新元数据；(8)调用close()关闭输出流。默认每个数据块写入3个副本。",
                 "type": "short-answer"
             },
             {
                 "question": "简述Block副本的存放策略。",
-                "answer": "HDFS默认副本数为3。存放策略通常为：第一个副本存放在客户端所在的节点（如果客户端在集群内）或随机选择的节点；第二个副本存放在与第一个副本不同机架的节点上（防范机架故障）；第三个副本存放在与第二个副本同机架的另一个节点上。",
+                "answer": "参考答案： HDFS默认副本数为3，存放策略如下：(1)第一个副本——放在客户端所在的DataNode上（如果客户端在集群外则随机选择一台），原则是就近放置；(2)第二个副本——放在与第一个副本不同机架（Rack）的节点上，保证即使整个机架故障也有数据可用；(3)第三个副本——放在与第二个副本同一机架的不同节点上，减少跨机架数据传输。如果有更多副本，则随机选择节点存放。这种策略既保证了数据的可靠性（跨机架容灾），又优化了网络传输效率（同一机架内传输速度快）。\n三、操作实践（PPT补充）",
                 "type": "short-answer"
             },
             {
                 "question": "编写程序实现对HDFS文件的读写。",
-                "answer": "可以使用 Java API（如 `FileSystem.get()` 获得HDFS系统实例，使用 `FSDataInputStream` 读取数据，使用 `FSDataOutputStream` 写入数据）完成相关编程。完整的Java代码实现如下：\n```java\nimport java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport org.apache.hadoop.conf.Configuration;\nimport org.apache.hadoop.fs.FSDataInputStream;\nimport org.apache.hadoop.fs.FSDataOutputStream;\nimport org.apache.hadoop.fs.FileSystem;\nimport org.apache.hadoop.fs.Path;\npublic class HDFSExample {\npublic static void main(String[] args) {\ntry {\n// 1. 初始化配置并获取HDFS FileSystem实例\nConfiguration conf = new Configuration();\n// 注意：如果在本地运行，需要指定HDFS的URI，例如 conf.set(\"fs.defaultFS\", \"hdfs://localhost:9000\");\nFileSystem fs = FileSystem.get(conf);\n// 2. 定义HDFS上的文件路径\nPath filePath = new Path(\"/user/hadoop/test.txt\");\n// 3. 写入数据到HDFS文件\nFSDataOutputStream out = fs.create(filePath, true); // true表示覆盖同名文件\nString writeData = \"Hello HDFS!\\nThis is a test file.\\n\";\nout.write(writeData.getBytes(\"UTF-8\"));\nout.close();\nSystem.out.println(\"数据成功写入到HDFS: \" + filePath);\n// 4. 从HDFS文件读取数据\nFSDataInputStream in = fs.open(filePath);\nBufferedReader reader = new BufferedReader(new InputStreamReader(in, \"UTF-8\"));\nSystem.out.println(\"从HDFS读取的数据内容：\");\nString line;\nwhile ((line = reader.readLine()) != null) {\nSystem.out.println(line);\n}\nreader.close();\nin.close();\n// 5. 关闭文件系统实例\nfs.close();\n} catch (Exception e) {\ne.printStackTrace();\n}\n}\n}\n```",
+                "answer": "来源：第4章 HDFS 分布式文件系统，第 78 页\n参考答案：实践要点：可用 HDFS Shell 或 Java API 完成文件上传、下载、读取、创建目录和删除。常用命令包括 hdfs dfs -mkdir、-put、-cat、-get、-ls、-rm；Java API 使用 FileSystem、Path、FSDataInputStream/OutputStream。",
                 "type": "short-answer"
             }
         ]
@@ -1098,15 +1231,15 @@
         "chapter": "第5章 MapReduce 分布式计算",
         "mcqs": [
             {
-                "question": "MapReduce计算模型的描述，下列错误的是（ ）",
+                "question": "MapReduce编程模型的描述错误的是（ ）",
                 "options": [
-                    "A. MapReduce 采用的是一种“分而治之”的思想",
-                    "B. MapReduce框架采用了Master/Slave架构",
-                    "C. MapReduce应用程序只能用Java语言来写",
-                    "D. MapReduce 可以处理离线任务"
+                    "A. MapReduce采用的是\"分而治之\"的思想",
+                    "B. MapReduce框架采用的是Master/Slave架构",
+                    "C. MapReduce应用程序只能用Java语言编写",
+                    "D. MapReduce可以处理海量数据"
                 ],
                 "answer": "C",
-                "explanation": "MapReduce程序不仅可以用Java编写，还可以通过 Hadoop Streaming 机制使用 Python、C++ 等其他编程语言编写。",
+                "explanation": "MapReduce支持多种编程语言，包括Java、Python（通过Hadoop Streaming）、C++（通过Hadoop Pipes）等。",
                 "type": "multiple-choice"
             },
             {
@@ -1118,11 +1251,11 @@
                     "D. 计算向数据靠拢"
                 ],
                 "answer": "D",
-                "explanation": "大数据处理中，移动数据会消耗大量网络带宽。因此MapReduce采用“计算向数据靠拢”的原则，将计算任务调度到存储数据的节点上执行，从而节省了网络传输开销。",
+                "explanation": "MapReduce 的基本设计思想是“计算向数据靠拢”，尽量把计算任务调度到数据所在节点附近执行，以减少大规模数据传输。",
                 "type": "multiple-choice"
             },
             {
-                "question": "对于文本行“test hadoop test program”，经过WordCount的Reduce函数处理后的结果是（ ）",
+                "question": "对文本\"test hadoop test program\"，使用WordCount的Reduce函数处理时，输出的结果是（ ）",
                 "options": [
                     "A. <\"test\",<1,1>><\"hadoop\",1><\"program\",1>",
                     "B. <\"test\",2><\"hadoop\",1><\"program\",1>",
@@ -1130,82 +1263,82 @@
                     "D. <\"test\",1><\"test\",1><\"hadoop\",1><\"program\",1>"
                 ],
                 "answer": "B",
-                "explanation": "Reduce阶段会对Map输出并经过Shuffle分组的中间结果（如 `<\"test\", <1, 1>>`）进行聚合操作，最终输出合并后的结果，即 `<\"test\", 2>`。",
+                "explanation": "Reduce阶段将相同key的value列表汇总求和：test出现2次→<\"test\",2>，hadoop出现1次→<\"hadoop\",1>，program出现1次→<\"program\",1>。",
                 "type": "multiple-choice"
             },
             {
-                "question": "在设计词频统计的MapReduce程序时，对于文本行“test program test hadoop”，经过map函数处理后直接输出的结果应该是（没有发生combine和merge操作）（ ）",
+                "question": "对词频统计的MapReduce程序，对文本\"test program test hadoop\"，map函数处理后直接输出的结果应该是（没有combine和merge过程）（ ）",
                 "options": [
-                    "A. <\"test\",2>.<\"program\",1>和<\"hadoop\",1>",
-                    "B. <\"test\",1>.<\"test\",1>.<\"program\",1>和<\"hadoop\",1>",
-                    "C. <\"test\",<1,1>>.<\"program\",1>和<\"hadoop\",1>",
-                    "D. <\"test\",1,1>.<\"program\",1>和<\"hadoop\",1>"
+                    "A. <\"test\",2>, <\"program\",1>, <\"hadoop\",1>",
+                    "B. <\"test\",1>, <\"test\",1>, <\"program\",1>, <\"hadoop\",1>",
+                    "C. <\"test\",<1,1>>, <\"program\",1>, <\"hadoop\",1>",
+                    "D. <\"test\",1,1>, <\"program\",1>, <\"hadoop\",1>"
                 ],
                 "answer": "B",
-                "explanation": "Map函数会对每一行进行切分，每遇到一个单词就直接输出一个键值对 `<单词, 1>`。在没有进行Combine的情况下，两个\"test\"会原样输出为两个 `<\"test\", 1>`。",
+                "explanation": "Map阶段每遇到一个单词就输出一个键值对<word, 1>，不做合并时每个单词单独输出。所以test出现两次，输出两个<\"test\",1>。",
                 "type": "multiple-choice"
             },
             {
-                "question": "(多选题) MapReduce体系结构包括以下那几个组成部分（ ）",
+                "question": "（多选题）MapReduce的体系结构主要包括以下哪几个组成部分（ ）",
                 "options": [
                     "A. Client",
                     "B. JobTracker",
                     "C. TaskTracker",
                     "D. Task"
                 ],
-                "answer": "A, B, C, D",
-                "explanation": "在经典Hadoop 1.x的MapReduce架构中，包含了提交作业的Client，管理和调度作业的JobTracker，执行具体任务的TaskTracker，以及具体的Task实例（Map Task和Reduce Task）。",
+                "answer": "ABCD",
+                "explanation": "",
                 "type": "multiple-select"
             },
             {
-                "question": "(多选题) MapReduce执行过程包括以下哪几个阶段( )",
+                "question": "（多选题）MapReduce执行过程包括下列哪几个阶段（ ）",
                 "options": [
-                    "A. 从HDFS读入数据",
-                    "B. 执行Map任务输出中间结果",
-                    "C. 通过 Shuffle 阶段把中间结果发送给Reduce任务",
-                    "D. 执行Reduce任务得到结果并写入HDFS"
+                    "A. 从HDFS读取数据",
+                    "B. 执行Map任务产生中间结果",
+                    "C. 通过Shuffle阶段将中间结果传送给Reduce任务",
+                    "D. 执行Reduce任务得到最终结果并写入HDFS"
                 ],
-                "answer": "A, B, C, D",
-                "explanation": "以上选项涵盖了MapReduce完整的执行生命周期。",
+                "answer": "ABCD",
+                "explanation": "",
                 "type": "multiple-select"
             },
             {
-                "question": "(多选题)下列关于MapReduce 工作机制的描述,说法正确的有 （ ）",
+                "question": "（多选题）下列关于MapReduce工作机制的描述，说法正确的有（ ）",
                 "options": [
                     "A. 用户编写的MapReduce程序通过Client提交到JobTracker端",
                     "B. JobTracker负责资源监控和作业调度",
                     "C. Job Scheduler负责任务的调度和初始化",
-                    "D. TaskTracker 使用“slot”等量划分本节点上的资源量"
+                    "D. TaskTracker使用\"slot\"等量划分本节点上的资源量"
                 ],
-                "answer": "A, B, C, D",
-                "explanation": "描述了经典MapReduce框架（Hadoop 1.x）中的工作机制。YARN架构中JobTracker的功能已被ResourceManager替代，但经典架构的描述均是正确的。",
+                "answer": "ABCD",
+                "explanation": "课件第5章工作机制部分说明，作业提交到 JobTracker 后交由 Job Scheduler 调度并初始化；JobTracker负责资源监控和作业调度，TaskTracker通过 slot 划分本节点资源，因此 A、B、C、D 都正确。",
                 "type": "multiple-select"
             }
         ],
         "short_answers": [
             {
                 "question": "简述MapReduce的架构。",
-                "answer": "MapReduce计算框架采用Master/Slave架构：\n- 经典架构中：JobTracker（主）负责资源管理和作业调度；TaskTracker（从）负责执行具体的任务。\n- YARN架构中：ResourceManager负责集群资源管理；ApplicationMaster负责具体应用程序的调度和监控；NodeManager负责单节点资源管理和容器运行。",
+                "answer": "参考答案： MapReduce采用Master/Slave架构，主要由四个组件构成：(1)Client——用户编写的MapReduce程序通过Client提交到集群，指定输入/输出路径和其他配置参数；(2)JobTracker——主节点组件，负责资源监控和作业调度，管理所有TaskTracker，分配Map和Reduce任务，监控任务执行状态，失败时重新调度；(3)TaskTracker——从节点组件，运行在各个数据节点上，通过Heartbeat定期向JobTracker汇报资源使用情况和任务执行进度，接收并执行JobTracker分配的任务；(4)Task——包括MapTask和ReduceTask两种，是实际执行计算任务的单元，由TaskTracker启动JVM进程来执行。",
                 "type": "short-answer"
             },
             {
-                "question": "简述MapReduce的工作过程。",
-                "answer": "(1) 数据输入：对HDFS上的输入文件进行分片（InputSplit）。(2) Map阶段：Map Task读取分片数据，执行自定义map逻辑，输出键值对。(3) Shuffle阶段：系统对Map输出结果进行分区（Partition）、排序（Sort）和分组（Group），将相同key的数据传输到同一个Reduce。(4) Reduce阶段：执行reduce逻辑进行聚合操作。(5) 数据输出：最终结果写回HDFS。",
+                "question": "简述MapReduce的工作流程。",
+                "answer": "参考答案： MapReduce工作流程分为五个阶段：(1)输入分片（Input Split）——将输入数据按固定大小（默认128MB）切分为多个分片，每个分片对应一个Map任务；(2)Map阶段——每个Map任务读取分片数据，调用用户自定义的map()函数处理，生成中间键值对（key-value pairs）并写入本地磁盘；(3)Shuffle阶段——将Map输出的中间结果按key进行分区（Partition），通过网络传输到对应的Reduce节点，进行排序（Sort）和合并（Merge）；(4)Reduce阶段——每个Reduce任务获取属于自己的分区数据，调用用户自定义的reduce()函数，对相同key的value列表进行汇总计算；(5)输出阶段——将Reduce任务的结果写入HDFS。",
                 "type": "short-answer"
             },
             {
                 "question": "简述MapReduce的工作机制。",
-                "answer": "客户端向集群提交作业，主节点（ResourceManager/JobTracker）接收到作业后进行初始化并分配资源，通知从节点（NodeManager/TaskTracker）启动容器执行Map和Reduce Task。Task通过心跳机制向主节点汇报状态，主节点监控任务执行，若失败则重新调度。",
+                "answer": "参考答案： MapReduce工作机制涵盖整个作业生命周期：(1)作业提交——客户端调用Job.submit()方法，连接JobTracker，上传作业配置和JAR文件到HDFS；(2)作业初始化——JobTracker将作业放入内部队列，Job Scheduler根据调度策略（FIFO/Fair/Capacity）对作业进行调度和初始化，创建作业对象并生成Map和Reduce任务列表；(3)任务分配——JobTracker根据数据本地性（Data Locality）原则，优先将Map任务分配给数据所在节点或同一机架的TaskTracker，Reduce任务则在可用节点间分配；(4)任务执行——TaskTracker启动独立的JVM进程执行Map/Reduce任务，Map输出结果写入本地磁盘，Reduce从各个Map节点拉取数据；(5)进度监控与失败处理——TaskTracker通过心跳汇报任务进度，任务失败时自动重试（默认重试4次），超过重试次数则整个作业失败；(6)作业完成——所有任务成功完成后，JobTracker通知客户端，清理临时文件。\n三、操作实践（PPT补充）",
                 "type": "short-answer"
             },
             {
                 "question": "编写MapReduce WordCount。",
-                "answer": "经典示例，需要编写Mapper类继承 `Mapper` 并重写 `map` 方法，编写Reducer类继承 `Reducer` 并重写 `reduce` 方法，最后在驱动类（Driver）中配置Job参数并提交。以下是完整的Java代码实现：\n```java\nimport java.io.IOException;\nimport org.apache.hadoop.conf.Configuration;\nimport org.apache.hadoop.fs.Path;\nimport org.apache.hadoop.io.IntWritable;\nimport org.apache.hadoop.io.Text;\nimport org.apache.hadoop.mapreduce.Job;\nimport org.apache.hadoop.mapreduce.Mapper;\nimport org.apache.hadoop.mapreduce.Reducer;\nimport org.apache.hadoop.mapreduce.lib.input.FileInputFormat;\nimport org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;\npublic class WordCount {\npublic static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable> {\nprivate final static IntWritable one = new IntWritable(1);\nprivate Text word = new Text();\npublic void map(Object key, Text value, Context context) throws IOException, InterruptedException {\nString[] tokens = value.toString().split(\"\\\\s+\");\nfor (String token : tokens) {\nword.set(token);\ncontext.write(word, one);\n}\n}\n}\npublic static class IntSumReducer extends Reducer<Text, IntWritable, Text, IntWritable> {\nprivate IntWritable result = new IntWritable();\npublic void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {\nint sum = 0;\nfor (IntWritable val : values) {\nsum += val.get();\n}\nresult.set(sum);\ncontext.write(key, result);\n}\n}\npublic static void main(String[] args) throws Exception {\nConfiguration conf = new Configuration();\nJob job = Job.getInstance(conf, \"word count\");\njob.setJarByClass(WordCount.class);\njob.setMapperClass(TokenizerMapper.class);\njob.setCombinerClass(IntSumReducer.class);\njob.setReducerClass(IntSumReducer.class);\njob.setOutputKeyClass(Text.class);\njob.setOutputValueClass(IntWritable.class);\nFileInputFormat.addInputPath(job, new Path(args[0]));\nFileOutputFormat.setOutputPath(job, new Path(args[1]));\nSystem.exit(job.waitForCompletion(true) ? 0 : 1);\n}\n}\n```",
+                "answer": "来源：第5章 MapReduce 分布式计算，第 64 页\n参考答案：实践要点：WordCount 的 Mapper 将每个单词输出为 <word,1>，Reducer 对同一 word 的值求和输出 <word,count>。注意输入分词、Text/IntWritable 类型、Job 配置和输出路径不能已存在。",
                 "type": "short-answer"
             },
             {
                 "question": "实现MapReduce倒排索引编程。",
-                "answer": "倒排索引是将单词映射到包含它的文档列表。可以在Map阶段输出 `<单词:文档名, 1>`，Combine阶段局部合并为 `<单词:文档名, 词频>`，然后在Reduce阶段将其合并为 `<单词, 文档名:词频; 文档名:词频;...>` 的形式。完整的Java代码实现如下：\n```java\nimport java.io.IOException;\nimport org.apache.hadoop.conf.Configuration;\nimport org.apache.hadoop.fs.Path;\nimport org.apache.hadoop.io.Text;\nimport org.apache.hadoop.mapreduce.Job;\nimport org.apache.hadoop.mapreduce.Mapper;\nimport org.apache.hadoop.mapreduce.Reducer;\nimport org.apache.hadoop.mapreduce.lib.input.FileInputFormat;\nimport org.apache.hadoop.mapreduce.lib.input.FileSplit;\nimport org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;\npublic class InvertedIndex {\npublic static class InvertedIndexMapper extends Mapper<Object, Text, Text, Text> {\nprivate Text keyInfo = new Text();\nprivate Text valueInfo = new Text(\"1\");\npublic void map(Object key, Text value, Context context) throws IOException, InterruptedException {\nFileSplit split = (FileSplit) context.getInputSplit();\nString fileName = split.getPath().getName();\nString[] words = value.toString().split(\"\\\\s+\");\nfor (String word : words) {\nkeyInfo.set(word + \":\" + fileName);\ncontext.write(keyInfo, valueInfo);\n}\n}\n}\npublic static class InvertedIndexCombiner extends Reducer<Text, Text, Text, Text> {\nprivate Text info = new Text();\npublic void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {\nint sum = 0;\nfor (Text value : values) {\nsum += Integer.parseInt(value.toString());\n}\nString[] splits = key.toString().split(\":\");\ninfo.set(splits[1] + \":\" + sum);\nkey.set(splits[0]);\ncontext.write(key, info);\n}\n}\npublic static class InvertedIndexReducer extends Reducer<Text, Text, Text, Text> {\nprivate Text result = new Text();\npublic void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {\nStringBuilder fileList = new StringBuilder();\nfor (Text value : values) {\nfileList.append(value.toString()).append(\"; \");\n}\nresult.set(fileList.toString());\ncontext.write(key, result);\n}\n}\npublic static void main(String[] args) throws Exception {\nConfiguration conf = new Configuration();\nJob job = Job.getInstance(conf, \"inverted index\");\njob.setJarByClass(InvertedIndex.class);\njob.setMapperClass(InvertedIndexMapper.class);\njob.setCombinerClass(InvertedIndexCombiner.class);\njob.setReducerClass(InvertedIndexReducer.class);\njob.setMapOutputKeyClass(Text.class);\njob.setMapOutputValueClass(Text.class);\njob.setOutputKeyClass(Text.class);\njob.setOutputValueClass(Text.class);\nFileInputFormat.addInputPath(job, new Path(args[0]));\nFileOutputFormat.setOutputPath(job, new Path(args[1]));\nSystem.exit(job.waitForCompletion(true) ? 0 : 1);\n}\n}\n```",
+                "answer": "来源：第5章 MapReduce 分布式计算，第 64 页\n参考答案：实践要点：倒排索引通常把每个词映射到包含它的文档及出现次数，如 <word, doc:count>。Mapper 输出词和文档标识，Reducer 汇总同一词在不同文档中的统计结果。",
                 "type": "short-answer"
             }
         ]
@@ -1222,11 +1355,11 @@
                     "D. 是一种NoSQL数据库"
                 ],
                 "answer": "A",
-                "explanation": "HBase是Apache旗下的顶级开源项目，是一个高可靠性、高性能、面向列、可伸缩的分布式存储系统，属于开源NoSQL数据库。",
+                "explanation": "HBase是开源的分布式列式NoSQL数据库，基于Google BigTable论文实现，属于Apache顶级项目。",
                 "type": "multiple-choice"
             },
             {
-                "question": "HBase依赖（ ）提供协同服务",
+                "question": "HBase依赖（ ）提供协同服务。",
                 "options": [
                     "A. Zookeeper",
                     "B. Chubby",
@@ -1234,19 +1367,19 @@
                     "D. HDFS"
                 ],
                 "answer": "A",
-                "explanation": "HBase强依赖ZooKeeper集群进行状态协调、元数据维护、HMaster选举以及监控RegionServer的在线状态。",
+                "explanation": "HBase依赖ZooKeeper进行集群协调，包括Master选举、RegionServer监控、元数据存储等。Chubby是Google的分布式锁服务。",
                 "type": "multiple-choice"
             },
             {
-                "question": "HBase依靠（ ）存储底层数据",
+                "question": "HBase依靠（ ）存储底层数据。",
                 "options": [
                     "A. HDFS",
                     "B. Hadoop",
-                    "C. FLume",
+                    "C. Flume",
                     "D. MapReduce"
                 ],
                 "answer": "A",
-                "explanation": "HBase的数据最终是以StoreFile (即HFile) 的形式存储在HDFS中，借助HDFS提供的高可靠性和高容错性。",
+                "explanation": "HBase的数据文件（HFile）最终存储在HDFS上，利用HDFS的分布式存储和高容错能力。",
                 "type": "multiple-choice"
             },
             {
@@ -1258,58 +1391,140 @@
                     "D. IDEA"
                 ],
                 "answer": "C",
-                "explanation": "HBase运行在HDFS之上，必须先安装并启动Hadoop（HDFS）环境。",
+                "explanation": "HBase运行在Hadoop之上，必须先安装Hadoop和ZooKeeper。Spark、Hive不是HBase的必需依赖，IDEA是开发工具，非必需。",
                 "type": "multiple-choice"
             },
             {
                 "question": "下列对HBase数据库描述错误的是（ ）",
                 "options": [
                     "A. HBase是一个列式数据库",
-                    "B. HBase的单元由行键、列族、列和时间戳确定",
+                    "B. HBase 的单元由行键、列族、列和时间戳确定",
                     "C. HBase底层基于MapReduce",
                     "D. HBase列族支持动态扩展，可以添加一个列族或列"
                 ],
                 "answer": "C",
-                "explanation": "HBase底层存储是基于HDFS的，而不是基于MapReduce。MapReduce只是HBase之上的一种可选的数据计算分析框架。",
+                "explanation": "HBase 底层数据存储依赖 HDFS，不是基于 MapReduce；MapReduce 可用于批处理分析，但不是 HBase 的底层存储机制。",
                 "type": "multiple-choice"
             },
             {
-                "question": "关于HBase Shell命令解释错误的是（ ）",
+                "question": "关于HBase Shell命令的描述错误的是（ ）",
                 "options": [
                     "A. put：插入记录",
                     "B. drop：删除表",
-                    "C. get：读取表数据",
+                    "C. get：用于读取数据",
                     "D. alter：修改表数据"
                 ],
                 "answer": "D",
-                "explanation": "`alter` 命令用于修改表的结构（如添加、修改、删除列族等元数据操作），修改表里面的具体数据记录应继续使用 `put` 命令去覆盖。",
+                "explanation": "alter 用于修改表结构或列族属性，不是直接修改表数据；修改数据通常使用 put，删除数据使用 delete。因此 D 的解释错误。",
                 "type": "multiple-choice"
             }
         ],
         "short_answers": [
             {
-                "question": "简述Write-Ahead-Log的作用。",
-                "answer": "预写式日志（WAL）主要用于容错和灾难恢复。HBase在将数据写入内存（MemStore）之前，会先将操作记录写入WAL。如果RegionServer宕机导致内存数据丢失，可以通过回放WAL中的日志来恢复未持久化到磁盘的数据，保证数据不丢失。",
+                "question": "简述Write-Ahead-Log（WAL）的作用。",
+                "answer": "参考答案： Write-Ahead-Log（WAL，预写日志）是HBase中保证数据可靠性的关键机制。其作用如下：(1)数据持久化保证——当客户端向HBase写入数据时，数据首先写入MemStore（内存缓存），在写入MemStore之前，操作记录会先写入WAL日志文件（存储在HDFS上）；(2)故障恢复——如果RegionServer在MemStore数据还没有刷写到HFile（磁盘文件）之前发生故障，可以通过重放（Replay）WAL日志来恢复丢失的数据；(3)写操作的原子性——WAL确保写操作的原子性和一致性。WAL机制遵循\"先写日志，再写数据\"（Write Ahead）的原则，是数据库系统中常用的数据恢复技术。",
                 "type": "short-answer"
             },
             {
-                "question": "简述HBase数据是如何存储的。",
-                "answer": "逻辑上，HBase数据按行键、列族、列修饰符和时间戳进行多维映射组织。物理上，数据按列族分别存储；客户端数据写入时，先写入内存的MemStore和日志WAL中；当MemStore满后，被刷写（Flush）到HDFS上的HFile中；后台还会定期执行合并（Compaction）操作将小文件合并为大文件。",
+                "question": "简述HBase的数据是如何存储的。",
+                "answer": "参考答案： HBase采用面向列（Column-Oriented）的存储方式，数据组织如下：(1)数据模型：数据按表（Table）组织，每张表由行（Row）和列族（Column Family）组成。每行由唯一的行键（RowKey）标识，列族下可包含多个列限定符（Column Qualifier），每个单元格（Cell）由（RowKey, Column Family, Column Qualifier, Timestamp）四元组唯一确定。(2)物理存储：表在水平方向被切分为多个Region，每个Region存储一段连续RowKey范围的数据。Region是HBase分布式存储和负载均衡的最小单位。(3)存储层级：每个Region包含一个或多个Store，每个Store对应一个列族。Store内部包含一个MemStore（内存缓存）和多个HFile（磁盘文件）。数据先写入MemStore，达到阈值后刷写到HFile。HFile最终存储在HDFS上。",
                 "type": "short-answer"
             },
             {
                 "question": "ZooKeeper在HBase中的作用是什么？",
-                "answer": "(1) 选举活跃的HMaster，避免单点故障；(2) 监控RegionServer的状态，发生故障时通知HMaster；(3) 存储HBase的核心元数据寻址入口（hbase:meta的位置）；(4) 协调分布式操作。",
+                "answer": "参考答案： ZooKeeper在HBase中发挥以下四个关键作用：(1)Master选举——保证集群中只有一个HMaster处于Active状态，当Active HMaster故障时，ZooKeeper通过选举机制选出新的Active HMaster；(2)元数据存储——存储HBase的Schema信息（命名空间、表定义等），以及系统级的元数据；(3)RegionServer监控——实时监控所有RegionServer的在线状态，当某个RegionServer宕机或下线时，ZooKeeper通知HMaster进行相应的容错处理；(4)元数据表位置存储——存储ROOT元数据表的所在位置（在HBase旧版本中），帮助客户端定位hbase:meta表进而找到目标Region的地址。",
                 "type": "short-answer"
             },
             {
                 "question": "简述HBase过滤器的工作过程。",
-                "answer": "HBase的过滤器（Filter）允许在服务器端根据自定义规则（如行键正则匹配、列值过滤等）对数据进行筛选。在Scan或Get操作时，Filter会在RegionServer端逐行应用过滤逻辑，只有符合条件的数据才返回给客户端，从而大大减少了网络传输的数据量。",
+                "answer": "参考答案： HBase Filter 在 Get 或 Scan 时由 RegionServer 端执行，对行键、列族、列、值等条件进行过滤，只把满足条件的数据返回客户端。这样可以减少客户端处理量和网络传输。\n三、操作实践（PPT补充）",
                 "type": "short-answer"
             },
             {
                 "question": "编写程序实现对HBase数据的查询、添加和删除。",
-                "answer": "使用 HBase Java API。主要涉及 `ConnectionFactory` 创建连接，使用 `Admin` 创建/删除表，使用 `Put` 对象添加数据，`Get` 或 `Scan` 对象查询数据，`Delete` 对象删除数据。",
+                "answer": "来源：第6章 HBase分布式数据库应用，第 117 页\n参考答案：实践要点：使用 HBase Shell 或 Java API 完成建表、插入、查询、扫描和删除。Shell 常用命令有 create、put、get、scan、delete、disable、drop；Java API 常用 Connection、Table、Put、Get、Scan、Delete。",
+                "type": "short-answer"
+            }
+        ]
+    },
+    {
+        "chapter": "第7章 YARN资源分配",
+        "mcqs": [
+            {
+                "question": "（多选题）YARN是负责集群资源调度管理的组件。不同的计算框架运行在YARN框架之上，具有优点（ ）",
+                "options": [
+                    "A. 资源统一管理和调度平台提供资源隔离",
+                    "B. 共享底层存储，避免数据跨集群迁移",
+                    "C. 支持多个不同负载应用",
+                    "D. 集群利用率高"
+                ],
+                "answer": "ABCD",
+                "explanation": "YARN 作为统一资源管理和调度平台，可提供资源隔离、支持多个不同负载应用、提升集群利用率；多计算框架共享底层存储也能避免跨集群数据迁移，因此四项均为优点。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）对新一代资源管理调度框架YARN的理解正确的是（ ）",
+                "options": [
+                    "A. YARN既是资源管理调度框架，也是一个计算框架",
+                    "B. YARN总体上仍然是使用Master/Slave结构",
+                    "C. YARN可以实现在一个集群上部署一个统一的资源调度管理框架",
+                    "D. YARN的体系结构包含三个组件：ResourceManager，NodeManager，ApplicationMaster"
+                ],
+                "answer": "BCD",
+                "explanation": "A错误——YARN是资源管理调度框架，本身不是计算框架。MapReduce、Spark等计算框架运行在YARN之上。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）Hadoop系统中YARN支持哪些资源类型的管理（ ）",
+                "options": [
+                    "A. 内存",
+                    "B. CPU",
+                    "C. 网络I/O",
+                    "D. 磁盘空间"
+                ],
+                "answer": "AB",
+                "explanation": "课件第7章说明 Container 可抽象封装多维资源，但同时明确当前 YARN 主要支持 CPU 和内存两类资源管理；按本课程考试口径应选 A、B。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（单选题）Hadoop平台中yarn命令查看所有应用列表的命令是（ ）",
+                "options": [
+                    "A. yarn application -list -appStates FINISHED",
+                    "B. yarn node -list",
+                    "C. yarn application -list",
+                    "D. yarn rmadmin -refreshQueues"
+                ],
+                "answer": "C",
+                "explanation": "C——yarn application -list查看所有应用；A限制了只显示FINISHED状态；B是查看节点列表；D是刷新队列配置。",
+                "type": "multiple-choice"
+            },
+            {
+                "question": "（单选题）Hadoop系统中YARN资源的抽象表示是什么（ ）",
+                "options": [
+                    "A. 内存",
+                    "B. CPU",
+                    "C. Container",
+                    "D. NodeManager"
+                ],
+                "answer": "C",
+                "explanation": "YARN以Container（容器）作为资源抽象的基本单位。每个Container封装了一定数量的内存和CPU等资源，任务在Container中运行。",
+                "type": "multiple-choice"
+            }
+        ],
+        "short_answers": [
+            {
+                "question": "简述统一资源管理与调度平台的优点。",
+                "answer": "参考答案： 统一资源管理与调度平台（YARN）具有以下优点：(1)资源利用率提升——多种计算框架共享集群资源，避免了为每个框架单独部署集群造成的资源浪费；(2)数据共享——支持多种计算框架运行在同一集群上，共享底层HDFS数据，避免数据在不同集群间迁移；(3)多租户支持——可以为不同的应用和用户配置不同的资源队列和配额，实现多租户资源隔离；(4)灵活的调度策略——支持FIFO、Fair（公平）、Capacity（容量）等多种调度器，可根据需求选择；(5)弹性伸缩——根据应用需求动态分配和回收资源。",
+                "type": "short-answer"
+            },
+            {
+                "question": "简述YARN架构与工作流程。",
+                "answer": "参考答案： YARN采用Master/Slave架构，核心组件包括：(1)ResourceManager（RM）——全局资源管理器，负责整个集群的资源管理和调度，包括Scheduler（调度器，分配资源）和ApplicationsManager（管理应用的生命周期）；(2)NodeManager（NM）——运行在每个节点上的代理，负责管理该节点的资源（内存、CPU等），监控Container运行情况，定期向RM汇报心跳和资源状态；(3)ApplicationMaster（AM）——每个应用程序专属的管理器，负责向RM申请资源容器（Container），与NM协作启动和管理任务，监控任务执行。工作流程：客户端提交应用→RM为AM分配Container→AM启动→AM向RM申请任务资源→RM返回可用Container列表→AM在各NM上启动任务→任务执行完成→AM向RM注销。",
+                "type": "short-answer"
+            },
+            {
+                "question": "简述YARN Shell有哪些命令及如何使用。",
+                "answer": "参考答案： YARN Shell常用命令及其用法：(1)yarn application -list——列出所有应用及其状态（RUNNING、FINISHED、FAILED等）；(2)yarn application -status <ApplicationId>——查看指定应用的详细状态信息；(3)yarn application -kill <ApplicationId>——强制终止指定的应用；(4)yarn node -list——列出集群中所有节点及其状态；(5)yarn node -status <NodeId>——查看指定节点的详细信息（资源总量、已使用量等）；(6)yarn logs -applicationId <ApplicationId>——查看应用的日志输出；(7)yarn jar <jarFile> <MainClass>——提交MapReduce作业；(8)yarn rmadmin -refreshQueues——刷新队列配置。",
                 "type": "short-answer"
             }
         ]
@@ -1318,7 +1533,7 @@
         "chapter": "第8章 Spark集群计算",
         "mcqs": [
             {
-                "question": "以下哪个不是 spark-submit的指定参数? （ ）",
+                "question": "以下哪个不是spark-submit的指定参数？（ ）",
                 "options": [
                     "A. --master",
                     "B. --class",
@@ -1326,19 +1541,19 @@
                     "D. --url"
                 ],
                 "answer": "D",
-                "explanation": "`spark-submit` 提交任务的常用参数包括 `--master` (指定主节点URL), `--class` (主类名), `--name` (应用名称)等，不存在 `--url` 参数。",
+                "explanation": "spark-submit常用参数包括--master（指定集群master地址）、--class（指定主类全限定名）、--name（应用名称）等。不存在--url参数。",
                 "type": "multiple-choice"
             },
             {
-                "question": "下列不属于Spark 生态系统的是 （ ）",
+                "question": "下列不属于Spark生态系统的是（ ）",
                 "options": [
-                    "A. Spark streaming",
-                    "B. storm",
+                    "A. Spark Streaming",
+                    "B. Storm",
                     "C. Spark SQL",
                     "D. Spark MLlib"
                 ],
                 "answer": "B",
-                "explanation": "Storm是一个开源的分布式实时计算系统，属于Hadoop生态圈的一员，不属于Spark生态系统（BDAS）。Spark自身处理流数据的组件是Spark Streaming。",
+                "explanation": "Storm是Apache旗下的独立流式计算框架（源自Twitter），不属于Spark生态系统。Spark Streaming是Spark的流处理组件。",
                 "type": "multiple-choice"
             },
             {
@@ -1350,19 +1565,19 @@
                     "D. Lisp"
                 ],
                 "answer": "D",
-                "explanation": "Spark SQL及Spark核心API主要支持Scala、Java、Python和R语言，不支持Lisp语言。",
+                "explanation": "Spark SQL支持Scala（原生）、Java、Python和R语言API，不支持Lisp。",
                 "type": "multiple-choice"
             },
             {
-                "question": "RDD操作包括转换（Transformation）和动作(Action)两种类型，下列RDD操作不属于动作（Action）类型的是（ ）",
+                "question": "RDD操作包括转换（Transformation）和动作（Action）两种类型，下列RDD操作不属于动作（Action）类型的是（ ）",
                 "options": [
                     "A. collect",
                     "B. count",
                     "C. reduce",
                     "D. top"
                 ],
-                "answer": "备注题意：本题题干或选项可能存在描述瑕疵。在Spark中，`collect`, `count`, `reduce` 以及 `top` 均属于 Action (动作) 算子。如果本题必须选一个，请参考任课老师的讲解或者检查原题目中是否有类似 `map` 或 `filter` 这样的 Transformation 算子作为选项。",
-                "explanation": "",
+                "answer": "原题选项疑似有误：A、B、C、D 均为 Action",
+                "explanation": "collect、count、reduce 都是 Action；top(num) 也会触发作业并返回最大的若干元素，同样属于 Action。因此本题“选择不属于 Action”的选项设置有误，不应强行选 D。",
                 "type": "multiple-choice"
             },
             {
@@ -1370,11 +1585,11 @@
                 "options": [
                     "A. Scala是一种多范式编程语言",
                     "B. Scala是Spark的主要编程语言，Spark还支持Java、Python、C作为编程语言",
-                    "C. Scala 支持函数式编程",
+                    "C. Scala支持函数式编程",
                     "D. Scala运行于Java平台，与现有的Java程序兼容"
                 ],
                 "answer": "B",
-                "explanation": "Spark主要支持的编程语言是Scala、Java、Python和R，官方并没有将C语言作为其原生支持的编程语言。",
+                "explanation": "B不正确——Spark支持Scala、Java、Python和R，但不支持C语言作为编程语言。A、C、D均正确描述了Scala的特性。",
                 "type": "multiple-select"
             },
             {
@@ -1385,42 +1600,37 @@
                     "C. 提供了内存计算，计算速度快",
                     "D. 基于DAG的任务调度执行机制"
                 ],
-                "answer": "A, C, D",
-                "explanation": "Spark的核心优势在于基于内存的计算、高效的DAG任务调度以及丰富的API算子。它是分布式计算框架，而不是“数据集中式”计算，因此B描述错误。",
+                "answer": "ACD",
+                "explanation": "",
                 "type": "multiple-select"
             },
             {
                 "question": "（多选题）Spark的运行架构包括（ ）",
                 "options": [
                     "A. 负责任务执行的Executor",
-                    "B. 负责控制一个应用执行的 Driver",
-                    "C. 负责整个集群管理的 Master",
-                    "D. 负责计算节点任务的 Worker"
+                    "B. 负责控制一个应用执行的Driver",
+                    "C. 负责整个集群管理的Master",
+                    "D. 负责计算节点任务的Worker"
                 ],
-                "answer": "A, B, C, D",
-                "explanation": "在Spark的Standalone模式运行架构中，上述四个组件均是其核心构成部分。",
+                "answer": "ABCD",
+                "explanation": "课件第8章 Spark 架构图和文字说明包含 Master、Worker、Driver、Executor 等角色，因此 A、B、C、D 均属于 Spark 运行架构相关组成。",
                 "type": "multiple-select"
             }
         ],
         "short_answers": [
             {
                 "question": "简述Spark开源框架及其特点。",
-                "answer": "Spark是一个基于内存计算的大数据分布式处理框架。其特点包括：\n1) 速度快：基于内存计算，支持DAG图调度，速度远快于MapReduce。\n2) 易用性好：提供超过80种高级算子，支持Scala、Java、Python和R。\n3) 通用性强：包含了批处理(Core)、交互式查询(SQL)、流处理(Streaming)和机器学习(MLlib)等一栈式处理组件。\n4) 兼容性好：可运行于YARN、Mesos等管理器上，可读取HDFS、HBase等数据。",
+                "answer": "参考答案： Spark是加州大学伯克利分校AMP实验室开发的快速、通用的分布式计算引擎。主要特点：(1)速度快——基于内存计算（将中间结果缓存在内存中），比Hadoop MapReduce快10~100倍；基于DAG（有向无环图）的调度机制减少了不必要的磁盘I/O；(2)易用性——提供Scala、Java、Python、R四种语言的API，代码简洁（相比MapReduce代码量减少2-5倍）；(3)通用性——Spark Core提供RDD基本编程模型，Spark SQL处理结构化数据，Spark Streaming处理实时流数据，MLlib提供机器学习算法，GraphX处理图计算，覆盖多种计算场景；(4)随处运行——可运行在Hadoop YARN、Apache Mesos、Kubernetes、Standalone独立集群或云环境上。",
                 "type": "short-answer"
             },
             {
                 "question": "简述Spark生态系统及其主要组件。",
-                "answer": "Spark生态系统（BDAS）主要包括：\n- Spark Core：核心组件，提供内存计算、任务调度等基础功能和RDD API。\n- Spark SQL：用于处理结构化数据，支持SQL查询。\n- Spark Streaming：用于处理实时流数据。\n- MLlib：Spark的机器学习库。\n- GraphX：用于图计算和图挖掘的组件。",
+                "answer": "参考答案： Spark生态系统（BDAS，Berkeley Data Analytics Stack）包括以下核心组件：(1)Spark Core——整个Spark生态的基础，提供RDD编程模型、内存计算、任务调度、容错恢复等核心功能；(2)Spark SQL——用于结构化数据处理的模块，支持使用SQL和DataFrame API进行查询，兼容Hive；(3)Spark Streaming——实时流数据处理组件，采用微批次（micro-batch）架构，支持从Kafka、Flume等数据源接收流数据；(4)Spark MLlib——分布式机器学习库，提供分类、回归、聚类、协同过滤、降维等算法以及特征工程和Pipeline工具；(5)Spark GraphX——分布式图计算框架，提供图操作API和图算法（PageRank、Triangle Count等）。",
                 "type": "short-answer"
             },
             {
                 "question": "简述RDD的基本工作原理和特性。",
-                "answer": "RDD（弹性分布式数据集）是Spark的核心数据抽象。\n- 特性：只读的、分区的、容错的、支持内存计算。\n- 原理：RDD支持Transformation和Action两种操作。Transformation（如map）是延迟执行的（懒计算），仅记录血缘关系（Lineage）；只有遇到Action操作（如collect）时，才会真正触发DAG任务调度和分布式计算。数据丢失时可通过Lineage重新计算恢复。",
-                "type": "short-answer"
-            },
-            {
-                "question": "使用Spark实现词频统计和相关系数计算。",
-                "answer": "词频统计代码示例（Scala）: `sc.textFile(\"hdfs://...\").flatMap(_.split(\" \")).map((_, 1)).reduceByKey(_ + _).collect()`。相关系数计算通常利用 `Statistics.corr()` 配合 `RDD[Vector]` 来实现。",
+                "answer": "参考答案： RDD（Resilient Distributed Dataset，弹性分布式数据集）是Spark的核心数据抽象。工作原理：RDD在逻辑上代表一个分布在集群各节点上的只读数据集合，通过记录数据集的转换操作（即\"血统\"Lineage）来实现容错。特性：(1)可分区（Partitioned）——数据在逻辑上被划分为多个分区，分布在集群不同节点的内存中；(2)不可变性（Immutable）——RDD一旦创建就不能修改，所有\"修改\"操作都是生成新的RDD；(3)可持久化（Persistence/Caching）——可以将RDD缓存到内存或磁盘，加速后续重复使用；(4)容错性（Fault-Tolerant）——不需要通过数据复制来容错，而是通过Lineage信息重新计算丢失的分区；(5)懒执行（Lazy Evaluation）——Transformation操作为惰性求值，只有遇到Action操作才触发真正的计算。",
                 "type": "short-answer"
             }
         ]
@@ -1429,7 +1639,7 @@
         "chapter": "第9章 Spark 机器学习",
         "mcqs": [
             {
-                "question": "下面哪个不是 RDD 的特点 ? （ ）",
+                "question": "下面哪个不是RDD的特点？（ ）",
                 "options": [
                     "A. 可分区",
                     "B. 可修改",
@@ -1437,7 +1647,7 @@
                     "D. 可持久化"
                 ],
                 "answer": "B",
-                "explanation": "RDD（弹性分布式数据集）的一个重要特性是“不可变性”（只读的），它不可被修改。对RDD的操作只能通过Transformation生成新的RDD。",
+                "explanation": "RDD是不可变的（Immutable），一旦创建就不能修改。可分区、可序列化（支持网络传输）、可持久化（支持缓存）都是RDD的特性。",
                 "type": "multiple-choice"
             },
             {
@@ -1449,31 +1659,31 @@
                     "D. 聚类"
                 ],
                 "answer": "B",
-                "explanation": "随机森林是一种集成学习方法，它通过构建并结合多个决策树分类器来进行分类或预测。",
+                "explanation": "随机森林（Random Forest）是集成学习方法，通过构建多棵决策树并综合投票来进行分类和预测，是\"多个树分类器\"的典型代表。",
                 "type": "multiple-choice"
             },
             {
-                "question": "（多选题）MLlib包括 （ ）",
+                "question": "（多选题）MLlib包括（ ）",
                 "options": [
                     "A. 分类模型",
                     "B. 回归模型",
                     "C. 聚类模型",
                     "D. 协同过滤"
                 ],
-                "answer": "A, B, C, D",
-                "explanation": "Spark MLlib 是一个全面的机器学习库，包含了分类、回归、聚类、协同过滤推荐等多种常见算法。",
+                "answer": "ABCD",
+                "explanation": "Spark MLlib提供丰富的机器学习算法，包括分类（如逻辑回归、决策树、随机森林、SVM）、回归（如线性回归、岭回归）、聚类（如K-means、LDA）、协同过滤（如ALS矩阵分解推荐算法）。",
                 "type": "multiple-select"
             },
             {
                 "question": "（多选题）下面关于Spark MLlib库的描述正确的是（ ）",
                 "options": [
-                    "A. MLlib库从2.0版本开始，spark.mllib 包中基于RDD的API已进入维护模式",
+                    "A. MLlib库从2.0版本开始，spark.mllib包中基于RDD的API已进入维护模式",
                     "B. spark.mllib包含基于DataFrame的原始算法API",
                     "C. spark.ml则提供了基于RDD的、高层次的API",
                     "D. spark.mllib包含基于RDD的原始算法API"
                 ],
-                "answer": "A, D",
-                "explanation": "`spark.mllib` 包含的是基于底层RDD的原始算法API，而从Spark 2.0开始进入维护模式。`spark.ml` 提供了基于DataFrame的高层次API。因此B、C说法相反，A、D说法正确。",
+                "answer": "AD",
+                "explanation": "A正确——从Spark 2.0开始，基于RDD的spark.mllib API进入维护模式，官方推荐使用基于DataFrame的spark.ml API；B错误——spark.mllib是基于RDD的API，不是基于DataFrame；C错误——spark.ml是基于DataFrame的高层次API，不是基于RDD的；D正确——spark.mllib包含基于RDD的原始算法API。",
                 "type": "multiple-select"
             },
             {
@@ -1484,35 +1694,35 @@
                     "C. IndexedRowMatrix",
                     "D. BlockMatrix"
                 ],
-                "answer": "A, B, C, D",
-                "explanation": "Spark MLlib提供了多种分布式和本地数据结构类型，包括本地向量（密集/稀疏）、带有标签的数据点（Labeled point），以及分布式的矩阵形式。",
+                "answer": "ABCD",
+                "explanation": "Spark MLlib提供的数据类型包括：(1)Local Vector——本地向量（稠密和稀疏）；(2)Labeled Point——带标签的数据点（特征+标签），用于监督学习；(3)IndexedRowMatrix——带行索引的分布式行矩阵；(4)BlockMatrix——分块矩阵，由MatrixBlocks类型的RDD支持。",
                 "type": "multiple-select"
             }
         ],
         "short_answers": [
             {
                 "question": "简述机器学习的基本概念。",
-                "answer": "机器学习是人工智能的核心领域，专门研究计算机怎样模拟人类的学习行为，以获取新的知识或技能，从而重新组织已有的知识结构使之不断改善自身的性能。其核心是通过数据训练模型，进而对未知数据进行预测或分类。",
+                "answer": "参考答案： 机器学习（Machine Learning）是人工智能的一个重要分支，指计算机系统利用数据和算法，自动从经验中学习和改进性能，而无需显式编程。基本思想是通过训练数据学习一个函数（即模型），使该函数能够对新数据进行准确的预测或决策。机器学习的三个核心步骤：(1)选择模型——根据实际问题选择合适的学习模型（如线性回归、决策树等），模型就是一组函数的集合；(2)定义损失函数——确定评判函数好坏的标准（如回归问题使用均方误差，分类问题使用交叉熵）；(3)训练优化——使用训练数据通过优化算法（如梯度下降、最小二乘法）找出使损失函数最小化的最优函数参数。训练完成后需要在新样本上测试，确保模型的泛化能力。",
                 "type": "short-answer"
             },
             {
                 "question": "简述机器学习的分类。",
-                "answer": "主要分为：\n1) 监督学习（Supervised Learning）：训练数据带有标签，用于分类、回归。\n2) 无监督学习（Unsupervised Learning）：训练数据不带标签，用于聚类、降维等。\n3) 半监督学习（Semi-supervised Learning）：结合少量带标签数据和大量无标签数据。\n4) 强化学习（Reinforcement Learning）：智能体在与环境互动中通过获得奖励或惩罚优化策略。",
+                "answer": "参考答案： 机器学习按学习方式可分为四大类：(1)监督学习（Supervised Learning）——训练数据带有标签/目标值，学习输入到输出的映射关系。包括分类问题（预测离散标签，如垃圾邮件识别、图像分类）和回归问题（预测连续值，如房价预测、销量预测）。常用算法：决策树、随机森林、逻辑回归、支持向量机、神经网络。(2)无监督学习（Unsupervised Learning）——训练数据没有标签，从数据本身发现隐藏的结构和模式。包括聚类（如客户分群、文档主题聚类）、降维（如特征压缩、数据可视化）、关联规则等。常用算法：K-means、层次聚类、PCA、LDA。(3)半监督学习（Semi-supervised Learning）——少量标签数据+大量无标签数据的混合学习，利用无标签数据提高学习效果。(4)强化学习（Reinforcement Learning）——智能体通过与环境交互，根据奖励/惩罚信号学习最优策略。应用场景：游戏AI、机器人控制、自动驾驶。",
                 "type": "short-answer"
             },
             {
                 "question": "MLlib的数据类型和API函数有哪些？如何使用？",
-                "answer": "数据类型：本地向量（密集和稀疏）、标记点（Labeled point）、分布式矩阵（RowMatrix等）。\nAPI：包含基于RDD的早期API (`spark.mllib`) 和基于DataFrame的新API (`spark.ml`)。\n使用方法：读取数据并转换为MLlib支持的类型（如DataFrame或Labeled point）；选择合适的算法并设置参数；调用 `fit()` 方法使用训练集训练出模型；最后调用 `transform()` 或 `predict()` 方法对测试集进行预测。",
+                "answer": "参考答案： (1)MLlib提供的数据类型：Local Vector（本地向量，分稠密Dense和稀疏Sparse两种）、Labeled Point（标签点，包含特征向量和标签）、Local Matrix（本地矩阵）、Distributed Matrix（分布式矩阵，包括RowMatrix、IndexedRowMatrix、CoordinateMatrix、BlockMatrix四种变体）。(2)API函数五大部分：ML Algorithms——常用机器学习算法（分类、回归、聚类、协同过滤）；Featurization——特征工程（特征提取、变换、降维、特征选择）；Pipelines——ML Pipeline工具（构建、评估和调优机器学习流水线）；Persistence——模型持久化（保存和加载训练好的模型和Pipeline）；Utilities——工具函数（线性代数运算、统计、数据处理）。(3)使用方法：从Spark 2.0开始，推荐使用spark.ml包（基于DataFrame的API，高层次）；spark.mllib包（基于RDD的API）已进入维护模式。通过from pyspark.ml import *（Python）或import org.apache.spark.ml.*（Scala/Java）导入使用。\n三、操作实践（PPT补充）",
                 "type": "short-answer"
             },
             {
-                "question": "计算鸢尾花数据的聚类中心并将数据进行分类。",
-                "answer": "该任务需要调用Spark MLlib中的 K-Means 算法。首先将提供的坐标点转换为 `Vector`，然后设定类别数 `k`，使用 `KMeans.train()` 进行训练得到模型，最后输出聚类中心点 `model.clusterCenters`，并使用 `model.predict()` 对数据进行分类。",
+                "question": "有3组鸢尾花数据（萼片宽度、萼片长度、花瓣宽度、花瓣长度）为：（4.9,3.0,1.4,0.2）、（5.0,3.6,1.4,0.2）、（5.2,2.7,3.9,1.4）、（6.1,2.9,4.7,1.4）、（7.7,2.6,6.9,2.3）、（6.6,2.9,4.6,1.3）、（4.4,3.2,1.3,0.2）、（5.7,2.8,4.1,1.3），计算其聚类中心并将数据进行分类。",
+                "answer": "来源：第9章 Spark 机器学习，第 119 页\n参考答案：实践要点：该任务适合用 KMeans 聚类。把鸢尾花四维特征转换为向量，设定 k=3，训练模型后输出 clusterCenters，并用 model.predict/transform 将样本分到最近聚类中心。",
                 "type": "short-answer"
             },
             {
                 "question": "使用决策树算法对鸢尾花数据进行模型训练和预测。",
-                "answer": "需将数据封装为 `LabeledPoint`（包含特征向量和标签），调用 `DecisionTree.trainClassifier()` 进行分类模型的训练，随后可使用该模型预测未知数据。",
+                "answer": "来源：第9章 Spark 机器学习，第 119 页\n参考答案：实践要点：使用决策树分类时，需要准备带标签的鸢尾花样本，将四个特征转为向量，划分训练/测试集，调用 DecisionTreeClassifier 或旧 API 训练模型，再用准确率、混淆矩阵等评价预测效果。",
                 "type": "short-answer"
             }
         ]
@@ -1529,7 +1739,7 @@
                     "D. Hive支持频繁数据更新"
                 ],
                 "answer": "A",
-                "explanation": "Hive主要用于数据仓库，非常适合批量导入数据进行离线分析。不支持频繁的单条数据更新。Hive早期版本之后已支持索引，同时也支持类SQL的查询和连接(Join)操作。",
+                "explanation": "Hive支持批量导入数据（LOAD DATA）；B错误——Hive支持索引（虽然有限）；C错误——Hive支持SQL查询和JOIN操作；D错误——Hive不适合频繁的数据更新和删除，设计为批量分析处理。",
                 "type": "multiple-choice"
             },
             {
@@ -1537,15 +1747,15 @@
                 "options": [
                     "A. Hive主要是为分析数据而设计的数据仓库",
                     "B. Hive依赖HDFS存储数据",
-                    "C. Hive将用户的查询语句转换为MapReduce任务后，然后进行处理",
+                    "C. Hive将用户的查询语句转换为MapReduce任务后进行处理",
                     "D. Hive能够在大规模数据集上实现实时、快速的查询"
                 ],
                 "answer": "D",
-                "explanation": "Hive由于底层依赖MapReduce计算框架执行，启动延迟较高，主要用于离线数据分析，不适合用于要求实时、毫秒级快速响应的查询场景。",
+                "explanation": "Hive是为批量数据处理设计的，查询延迟较高（秒到分钟级），不适用于实时查询。A、B、C都是正确的描述。",
                 "type": "multiple-choice"
             },
             {
-                "question": "以下不属于Hive的基本数据类型是（ ）",
+                "question": "以下不属于Hive的基本数据类型的是（ ）",
                 "options": [
                     "A. FLOAT",
                     "B. TINYINT",
@@ -1553,58 +1763,150 @@
                     "D. STRING"
                 ],
                 "answer": "C",
-                "explanation": "ARRAY属于Hive的复杂（集合）数据类型，不属于基本（标量）数据类型。",
+                "explanation": "ARRAY是Hive的复杂数据类型（Complex Type），不是基本数据类型。Hive的基本数据类型包括：TINYINT、SMALLINT、INT、BIGINT、FLOAT、DOUBLE、STRING、BOOLEAN、TIMESTAMP等。复杂数据类型包括：ARRAY、MAP、STRUCT。",
                 "type": "multiple-choice"
             },
             {
                 "question": "下列关于Hive基本操作命令的解释错误的是（ ）",
                 "options": [
-                    "A. create table if not exists salesperson...",
-                    "B. select name,salary from salesperson;",
-                    "C. create database shops;",
-                    "D. load data local inpath ‘/root/salesperson’ overwrite into table salesperson;"
+                    "A. create table if not exists salesperson(id bigint,name string,salary int); ——如果salesperson表不存在，创建表salesperson，含三个属性 id,name,salary",
+                    "B. select name,salary from salesperson; ——查询销售员的姓名、工资",
+                    "C. create database shops; ——创建数据库shops",
+                    "D. load data local inpath '/root/salesperson' overwrite into table salesperson; ——把目录'/root'下的数据文件中的数据以追加的方式装载进 salesperson表"
                 ],
                 "answer": "D",
-                "explanation": "命令中使用了 `overwrite` 关键字，这意味着新导入的数据将覆盖目标表中原有的数据，而不是以追加(append)的方式装载数据。",
+                "explanation": "overwrite 表示覆盖装载，不是追加装载；追加装载不应使用 overwrite。",
                 "type": "multiple-choice"
             },
             {
-                "question": "（多选题）Hive主要由哪几个部分组成（ ）",
+                "question": "（多选题）Hive主要由以下几个部分构成（ ）",
                 "options": [
                     "A. CLI",
                     "B. HWI",
                     "C. Thrift Server",
                     "D. Metastore"
                 ],
-                "answer": "A, B, C, D",
-                "explanation": "Hive主要组件包括不同的用户访问接口（如CLI命令行、HWI网页界面、Thrift Server远程客户端接口），以及存储表结构和元数据的Metastore等。",
+                "answer": "ABCD",
+                "explanation": "Hive的组成模块包括：CLI（命令行接口）、HWI（Hive Web界面）、Thrift Server（提供JDBC/ODBC远程访问服务）、Metastore（元数据存储，通常使用MySQL等关系数据库）、Driver（驱动，包含Compiler、Optimizer、Executor）。",
                 "type": "multiple-select"
             }
         ],
         "short_answers": [
             {
                 "question": "简述Hive的组成及执行流程。",
-                "answer": "- 组成: 包括用户接口（CLI等）、元数据存储（Metastore）、以及核心引擎（解析器、编译器、优化器、执行器）。\n- 执行流程: 用户提交HQL查询给Driver；Driver结合Metastore中的元数据将其解析、编译并优化为逻辑执行计划；然后转换为物理执行计划（通常是MapReduce任务的DAG图）；最后将任务提交给Hadoop集群执行，执行完成后返回结果。",
+                "answer": "参考答案： Hive组成模块：(1)CLI（Command Line Interface）——命令行接口，最常用的交互方式；(2)HWI（Hive Web Interface）——基于Web的图形界面；(3)Thrift Server——提供JDBC/ODBC服务，允许其他程序通过标准数据库接口访问Hive；(4)Metastore——元数据存储，保存表名、列信息、分区信息、数据所在HDFS路径等，通常使用MySQL等关系数据库。执行流程：(1)用户通过CLI/JDBC等提交HiveQL查询语句；(2)Driver接收查询，创建会话句柄；(3)Compiler从Metastore获取必要的元数据信息；(4)Compiler将HiveQL编译为抽象语法树（AST），再转换为逻辑执行计划，最终转化为由MapReduce/Tez/Spark任务组成的DAG；(5)Optimizer对执行计划进行优化（如列裁剪、谓词下推）；(6)Execution Engine按照DAG依赖顺序执行任务；(7)执行结果返回给用户。",
                 "type": "short-answer"
             },
             {
                 "question": "比较ARRAY、MAP和STRUCT这3种数据类型的区别。",
-                "answer": "- ARRAY：数组，是一组相同类型的数据元素的有序集合，通过索引访问（如 `arr[0]`）。\n- MAP：字典映射，是键值对（Key-Value）的集合，通过Key访问Value（如 `map['key']`）。\n- STRUCT：结构体，可以包含多种不同数据类型的命名字段，类似C语言中的结构体或Java对象，通过点号访问（如 `struct.fieldname`）。",
+                "answer": "参考答案： ARRAY 是有序同类型元素集合，通过下标访问；MAP 是键值对集合，通过 key 访问 value；STRUCT 是由多个命名字段组成的复合结构，字段类型可以不同。三者都属于 Hive 复杂数据类型。",
                 "type": "short-answer"
             },
             {
                 "question": "举例Hive文件格式的JSON表示。",
-                "answer": "Hive可以通过引入JSON SerDe来解析JSON格式的文本。例如：\n`{\"id\": 1, \"name\": \"Tom\", \"address\": {\"city\": \"Beijing\", \"street\": \"Xueyuan Road\"}}`\n在建表时，address 可以被映射为 Hive 的 STRUCT 或 MAP 复杂类型。",
+                "answer": "参考答案： Hive 可通过 JSON SerDe 读取 JSON 格式数据。例如一行数据可写为 {\"id\":1,\"name\":\"Tom\",\"scores\":[90,85],\"info\":{\"city\":\"Beijing\"}}，表中可定义数组、map 或 struct 字段与 JSON 结构对应。",
                 "type": "short-answer"
             },
             {
-                "question": "使用HSQL进行词频统计。",
-                "answer": "可以使用 `explode` 炸裂函数和 `split` 字符串切分函数实现：\n```sql\nSELECT word, count(1) AS count\nFROM (\nSELECT explode(split(line, ' ')) AS word FROM docs\n) w\nGROUP BY word;\n```",
+                "question": "使用HSQL编写词频统计。",
+                "answer": "参考答案： Hive SQL实现词频统计（WordCount），假设有一个text_table表，包含sentence列（每行一条文本）：\n-- 方法一：使用explode + split\nSELECT word, COUNT(*) AS word_count\nFROM (\nSELECT explode(split(sentence, ' ')) AS word\nFROM text_table\n) t\nGROUP BY word\nORDER BY word_count DESC;\n-- 方法二：使用LATERAL VIEW\nSELECT word, COUNT(*) AS word_count\nFROM text_table\nLATERAL VIEW explode(split(sentence, ' ')) t AS word\nGROUP BY word\nORDER BY word_count DESC;\n核心思路：(1)使用split()函数将每行句子按空格切分为单词数组；(2)使用explode()函数将数组展开为多行（每个单词一行）；(3)使用GROUP BY + COUNT进行分组聚合统计；(4)ORDER BY按词频降序排列。\n三、操作实践（PPT补充）",
                 "type": "short-answer"
             },
             {
-                "question": "编写访问Hive程序，完成对student表中数据的查询。",
-                "answer": "可以通过编写Java程序引入Hive JDBC驱动，建立到Hive Thrift Server (HiveServer2)的连接（JDBC URL一般为 `jdbc:hive2://host:port/dbname`），使用标准的 `Statement` 执行 `SELECT * FROM student` 语句来获取数据。",
+                "question": "编写访问Hive 程序，完成对student 表中数据的查询。",
+                "answer": "来源：第10章 Hive数据仓库应用，第 154 页\n参考答案：实践要点：Java 访问 Hive 通常通过 JDBC。启动 HiveServer2 后加载 Hive JDBC Driver，创建 Connection，执行 select * from student 等 SQL，遍历 ResultSet 输出结果，最后关闭 Statement 和 Connection。",
+                "type": "short-answer"
+            }
+        ]
+    },
+    {
+        "chapter": "第11章 ZooKeeper协调服务",
+        "mcqs": [
+            {
+                "question": "下列说法正确的是（ ）",
+                "options": [
+                    "A. Zookeeper是一个分布式的、开放源码的分布式应用程序协调服务，目标是封装好复杂、易出错的关键服务",
+                    "B. HBase的使用不需要启动Hadoop",
+                    "C. ZooKeeper集群中有领导者和跟随者2种角色",
+                    "D. ZooKeeper的数据模型是图结构"
+                ],
+                "answer": "A",
+                "explanation": "A正确描述了ZooKeeper的定义；B错误——HBase依赖Hadoop的HDFS和ZooKeeper；C错误——ZooKeeper有三种角色：Leader（领导者）、Follower（跟随者）、Observer（观察者）；D错误——ZooKeeper的数据模型是树形结构（类似文件系统），不是图结构。",
+                "type": "multiple-choice"
+            },
+            {
+                "question": "下面与Zookeeper类似的框架是（ ）",
+                "options": [
+                    "A. Sqoop",
+                    "B. Flume",
+                    "C. Kafka",
+                    "D. Chubby"
+                ],
+                "answer": "D",
+                "explanation": "Chubby是Google开发的分布式锁服务，提供了粗粒度的分布式锁和可靠的小文件存储，是ZooKeeper的设计原型。Sqoop是数据迁移工具，Flume是日志采集工具，Kafka是消息队列。",
+                "type": "multiple-choice"
+            },
+            {
+                "question": "（多选题）在ZooKeeper中，节点类型可以分为（ ）",
+                "options": [
+                    "A. 持久节点",
+                    "B. 临时节点",
+                    "C. 顺序节点",
+                    "D. 会话节点"
+                ],
+                "answer": "ABC",
+                "explanation": "ZooKeeper的ZNode节点类型：(1)持久节点（Persistent）——创建后一直存在，直到被显式删除；(2)临时节点（Ephemeral）——与客户端会话绑定，会话结束自动删除；(3)持久顺序节点（Persistent Sequential）——持久节点+自动递增序号；(4)临时顺序节点（Ephemeral Sequential）——临时节点+自动递增序号。不存在\"会话节点\"这种独立类型。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）ZAB协议包含的状态有（ ）",
+                "options": [
+                    "A. Leader",
+                    "B. Discovery",
+                    "C. Synchronization",
+                    "D. Broadcast"
+                ],
+                "answer": "ABCD",
+                "explanation": "课件将 ZAB 协议阶段概括为 Leader 选举、Discovery、Synchronization、Broadcast。选项 A 的 Leader 对应该课件中的 Leader 选举阶段，因此按课件口径四项均选。",
+                "type": "multiple-select"
+            },
+            {
+                "question": "（多选题）ZooKeeper的应用场景（ ）",
+                "options": [
+                    "A. 服务注册与订阅",
+                    "B. 分布式通知",
+                    "C. 服务命名",
+                    "D. 数据订阅、发布"
+                ],
+                "answer": "ABCD",
+                "explanation": "PPT 第11章列出的 ZooKeeper 应用场景包括服务注册与订阅、分布式通知、服务命名、数据订阅/发布，四项均正确。",
+                "type": "multiple-select"
+            }
+        ],
+        "short_answers": [
+            {
+                "question": "简述ZooKeeper协调服务。",
+                "answer": "参考答案： ZooKeeper是一个分布式、开源的分布式应用程序协调服务，是Apache顶级项目。它致力于封装分布式系统中那些复杂且容易出错的关键服务，将简单易用的接口和高效稳定的系统提供给用户。核心特性包括：(1)数据模型——采用类似文件系统的树形层次结构（ZNode节点树），每个节点可存储少量数据（默认最大1MB）；(2)集群角色——Leader（领导者，负责处理所有写请求和事务协调）、Follower（跟随者，处理读请求，参与选举和投票）、Observer（观察者，处理读请求但不参与投票，用于扩展读性能）；(3)一致性保证——通过ZAB（ZooKeeper Atomic Broadcast）协议实现分布式数据一致性；(4)Watcher机制——支持事件监听和通知，在数据变更时主动通知客户端；(5)高可用——集群半数以上节点存活即可正常工作。",
+                "type": "short-answer"
+            },
+            {
+                "question": "简述ZAB协议。",
+                "answer": "参考答案： ZAB（ZooKeeper Atomic Broadcast，ZooKeeper原子广播）协议是专为ZooKeeper设计的支持崩溃恢复的原子消息广播算法，是ZooKeeper实现数据一致性的核心。协议分为三个阶段：(1)Discovery（发现/Leader选举阶段）——集群启动或Leader宕机后，各节点通过投票选举产生新的Leader，要求获得超过半数（Quorum）节点的投票；(2)Synchronization（同步阶段）——新Leader选出后，各Follower与Leader进行数据同步，确保Follower的数据与Leader保持一致，同步完成后集群进入正常工作状态；(3)Broadcast（广播/消息广播阶段）——正常工作阶段，Leader接收客户端的事务请求，将请求转化为事务提议（Proposal），广播给所有Follower，等待超过半数Follower确认（ACK）后，Leader发送Commit消息，所有节点提交该事务。ZAB协议保证了事务的顺序一致性和原子性。",
+                "type": "short-answer"
+            },
+            {
+                "question": "简述ZooKeeper事件监听机制及工作流程。",
+                "answer": "参考答案： ZooKeeper通过Watcher（观察者）机制实现分布式事件监听和通知。工作流程：(1)注册Watcher——客户端在读取ZNode数据时（如getData()、getChildren()、exists()操作），向ZooKeeper服务器注册一个Watcher监听器；(2)事件触发——当被监听的ZNode发生相应变化（如数据内容修改、节点被删除、子节点列表变化等），ZooKeeper服务器会生成一个WatchedEvent事件对象；(3)事件通知——ZooKeeper服务器通过客户端连接将事件异步发送给注册了该Watcher的客户端；(4)回调处理——客户端收到通知后，调用注册时指定的回调函数（Watcher.process()）进行业务处理。重要特性：Watcher是一次性的（One-time Trigger），触发后自动失效，如需持续监听需要在收到通知后重新注册。Watcher机制保证了客户端能实时感知服务端数据的变化，而无需轮询。",
+                "type": "short-answer"
+            },
+            {
+                "question": "简述ZooKeeper如何解决YARN的ResourceManager高可用问题。",
+                "answer": "参考答案： 在YARN HA（高可用）架构中，通过ZooKeeper实现ResourceManager（RM）的自动故障转移：(1)初始状态——集群启动时，两个（或多个）RM节点同时向ZooKeeper注册，竞争创建同一个临时节点（ActiveStandbyElectorLock）；(2)Active选举——先成功创建该临时节点的RM成为Active状态，另一个RM成为Standby状态；(3)状态信息存储——Active RM将自己的状态信息（如应用信息、资源分配信息等）写入ZooKeeper的持久节点中，确保Standby RM可以读取这些信息；(4)故障检测——Standby RM通过Watcher机制监听Active RM创建的临时节点，当Active RM发生故障（宕机、网络断开等），ZooKeeper检测到会话超时，自动删除该临时节点；(5)故障转移——Standby RM通过Watcher收到节点删除通知，触发选举流程，成为新的Active RM；(6)状态恢复——新的Active RM从ZooKeeper中读取之前存储的状态信息，恢复所有正在运行的应用和资源分配信息，继续为集群提供服务。整个过程对用户透明，实现了自动故障转移。\n三、操作实践（PPT补充）",
+                "type": "short-answer"
+            },
+            {
+                "question": "编写程序实现ZNode的增加、删除等。",
+                "answer": "来源：第11章 ZooKeeper协调服务，第 110 页\n参考答案：实践要点：使用 ZooKeeper Java API 或 Curator 连接集群，调用 create 创建 znode，getData/setData 读写数据，getChildren 查看子节点，delete 删除节点，并处理 watcher 事件和连接会话关闭。",
                 "type": "short-answer"
             }
         ]
@@ -1614,33 +1916,33 @@
         "mcqs": [],
         "short_answers": [
             {
-                "question": "简述大数据展示平台的原理及功能。",
-                "answer": "- 原理: 通过数据接口从底层数据库或数据仓库中抽取处理好的数据，利用前端可视化技术（如Echarts）将数据转换为直观的图形图表展示给用户。\n- 功能: 主要包括数据查询、多维数据分析、大屏数据可视化展示、实时数据监控、报表导出等。",
+                "question": "简述大数据展示平台的原理和功能。",
+                "answer": "参考答案： 原理：大数据展示平台采用分层架构，通过数据采集层（网络爬虫）从目标数据源（如51job等招聘网站）获取数据，经过清洗和转换后存储到大数据存储系统（HBase/HDFS）中；通过后端接口服务层（SpringBoot）提供RESTful API数据接口；前端展示层（Vue.js + ECharts）通过Ajax请求获取数据并以可视化图表的形式呈现给用户。功能：(1)数据采集——自动抓取指定网站的公开数据；(2)数据存储——利用HBase等分布式存储系统存储海量数据；(3)数据查询——提供多维度数据检索和筛选功能；(4)数据可视化——以柱状图、折线图、饼图等形式展示数据分析结果；(5)趋势分析——展示数据随时间的变化趋势（如不同岗位的薪资变化）。",
                 "type": "short-answer"
             },
             {
                 "question": "简述大数据展示平台的功能。",
-                "answer": "具体包括：1) 数据集成与处理；2) 可视化图表展示（饼图、柱状图、地图等）；3) 交互式数据探索（如下钻、联动）；4) 动态实时刷新与业务监控；5) 权限与用户系统管理。",
+                "answer": "参考答案： 大数据展示平台的具体功能模块包括：(1)数据采集功能——通过爬虫模块（reptile-module）自动抓取前程无忧（51job）等招聘网站的岗位信息，包括职位名称、薪资、工作地点、公司名称、福利待遇等数据；(2)数据存储功能——将采集到的数据经解析和清洗后存储到HBase分布式数据库中，支持海量数据的横向扩展存储；(3)数据接口服务——基于SpringBoot框架构建RESTful API接口，提供标准化的数据访问服务，支持分页查询、条件筛选等；(4)数据可视化展示——前端使用Vue.js + ECharts（或类似图表库），将数据以地图、柱状图、折线图、饼图等形式直观展示；(5)多维分析——支持按城市、行业、薪资范围、工作经验等多个维度进行数据分析和对比；(6)实时更新——支持定时任务自动更新数据，保持展示内容的时效性。",
                 "type": "short-answer"
             },
             {
                 "question": "简述大数据展示平台的系统组成。",
-                "answer": "典型的展示平台系统分层包括：数据存储层（负责业务数据及离线数据的存储，如HDFS, MySQL等）；逻辑服务层（负责指标计算、接口封装，通常采用Spring Boot框架提供API）；前端展示层（使用Vue/React结合可视化组件，实现图表渲染和用户交互）。",
+                "answer": "参考答案： 大数据展示平台由四个核心模块组成：(1)前端展示模块（web-module）——使用Vue.js框架搭建，结合ECharts进行图表可视化，使用Element-UI作为UI组件库，通过axios发送HTTP请求获取后端数据，负责将数据以美观、直观的方式呈现给用户；(2)接口服务模块（api-module）——使用SpringBoot框架构建Java后端服务，提供RESTful API接口，负责接收前端请求、查询HBase数据库、进行数据加工处理后返回JSON格式数据；(3)数据采集模块（reptile-module）——使用HttpClient（发送HTTP请求解析JSON接口数据）和Selenium（模拟浏览器访问获取页面DOM数据）两种爬虫方式，从51job等网站抓取岗位数据；(4)数据存储层——使用HBase作为主要数据存储（存储爬取的岗位信息），HDFS作为底层文件存储，MySQL存储系统的元数据和配置信息。",
                 "type": "short-answer"
             },
             {
                 "question": "简述大数据展示平台涉及的关键技术。",
-                "answer": "- 后端技术: Spring Boot、MyBatis等框架开发RESTful API。\n- 大数据技术: Hadoop、Spark、Hive用于数据的批处理与流处理。\n- 存储技术: MySQL、Redis、HBase、ClickHouse等支持不同响应速度的数据存储。\n- 前端技术: HTML5、Vue.js、ECharts或D3.js可视化图表库。",
+                "answer": "参考答案： 平台涉及的关键技术栈：(1)后端技术——Java编程语言，SpringBoot框架（快速构建RESTful API服务），Maven（项目构建和依赖管理）；(2)前端技术——Vue.js（渐进式JavaScript前端框架），Vue Router（前端路由管理），Vuex（状态管理），ECharts（数据可视化图表库），axios（HTTP客户端），Element-UI（前端UI组件库）；(3)爬虫技术——HttpClient（Apache HTTP客户端库，通过直接请求接口解析JSON数据），Selenium（浏览器自动化测试框架，模拟人为访问获取动态渲染后的页面内容）；(4)大数据存储技术——HBase（分布式列式NoSQL数据库，存储爬取的岗位数据），HDFS（分布式文件系统，HBase的底层存储），Hadoop（大数据基础平台）；(5)开发工具——IntelliJ IDEA（Java集成开发环境），Node.js + npm/webpack（前端构建工具）。",
                 "type": "short-answer"
             },
             {
                 "question": "简述大数据展示平台的存储方式。",
-                "answer": "采用混合存储架构以满足不同需求：\n- 离线与海量明细数据: 存储在HDFS或Hive中。\n- 高频实时查询的热数据/汇总指标: 存储在Redis、HBase或ClickHouse等高性能数据库中，保证快速响应前端请求。\n- 业务配置与系统元数据: 存储在传统关系型数据库（如MySQL）中。",
+                "answer": "参考答案： 大数据展示平台采用分层存储架构：(1)业务数据存储（HBase）——爬虫采集的岗位信息（如职位名称、公司、薪资、地点、技能要求等）以结构化方式存储到HBase表中。HBase的行键（RowKey）设计综合考虑数据分布均衡性和查询效率；列族按业务逻辑划分（如基本信息列族、薪资列族、技能标签列族等）；(2)底层文件存储（HDFS）——HBase的所有数据文件（HFile）和WAL日志最终存储在HDFS上，利用HDFS的高容错性（3副本）和分布式扩展能力保证数据的安全性和可扩展性；(3)元数据/配置存储（MySQL）——存储系统配置信息、用户信息、爬虫任务调度记录等元数据；(4)前端静态资源——Vue.js项目经webpack打包编译后生成的HTML/CSS/JS静态文件部署在Nginx等Web服务器上。多层存储架构各司其职，既保证了海量数据的高效存取，又降低了整体系统成本。\n三、操作实践（PPT补充）",
                 "type": "short-answer"
             },
             {
                 "question": "利用中国气象网官网的公开数据，展示省会城市最近三月的气温、气压、湿度、风、降水等信息的变化趋势。",
-                "answer": "这是一个典型的大数据可视化综合应用项目流程。主要步骤包括：编写爬虫代码或调用公开API获取气象数据；将数据存储在MySQL或HDFS中；使用Spring Boot编写后端接口，将处理后的聚合数据暴露出去；前端使用Vue和ECharts（如折线图展现趋势、柱状图展现降水）调用接口并渲染大屏界面。\n> *文档由AI助手基于原始PPT提取的题目内容自动整理生成，供期末复习参考使用。祝考试顺利！*",
+                "answer": "来源：第12章 大数据展示平台，第 102 页\n参考答案：实践要点：从中国气象网或公开接口获取省会城市气象数据，清洗字段并存储，后端提供按城市和日期查询的接口，前端用折线图、柱状图等展示气温、气压、湿度、风、降水近三月变化趋势。",
                 "type": "short-answer"
             }
         ]
