@@ -226,13 +226,25 @@
             <div v-if="mode === 'quiz'" class="glass-panel rounded-3xl p-6 sm:p-10 transition-all-smooth animate-fade-in-up" style="animation-delay: 0.2s">
                 <div class="space-y-8">
                     <!-- Chapter Selector -->
-                    <div class="relative group">
-                        <select v-model="selectedChapterIndex" @change="resetQuiz" class="w-full appearance-none bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200 dark:border-slate-700 text-ink-main dark:text-slate-200 text-sm rounded-xl px-5 py-4 pr-10 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all-smooth shadow-sm cursor-pointer font-medium hover:border-brand-300 dark:hover:border-brand-600">
-                            <option value="-1">随机所有章节综合练习</option>
-                            <option v-for="(ch, idx) in quizData" :key="idx" :value="idx">{{ ch.chapter }}</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-ink-muted group-hover:text-brand-500 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="relative group flex-1">
+                            <select v-model="selectedChapterIndex" @change="resetQuiz" class="w-full appearance-none bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200 dark:border-slate-700 text-ink-main dark:text-slate-200 text-sm rounded-xl px-5 py-4 pr-10 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all-smooth shadow-sm cursor-pointer font-medium hover:border-brand-300 dark:hover:border-brand-600">
+                                <option value="-1">随机所有章节综合练习</option>
+                                <option v-for="(ch, idx) in quizData" :key="idx" :value="idx">{{ ch.chapter }}</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-ink-muted group-hover:text-brand-500 transition-colors">
+                                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <div class="relative group flex-1">
+                            <select v-model="questionFilterType" @change="resetQuiz" class="w-full appearance-none bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200 dark:border-slate-700 text-ink-main dark:text-slate-200 text-sm rounded-xl px-5 py-4 pr-10 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all-smooth shadow-sm cursor-pointer font-medium hover:border-brand-300 dark:hover:border-brand-600">
+                                <option value="all">全部题型</option>
+                                <option value="mcq">仅选择题</option>
+                                <option value="sa">仅简答/操作题</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-ink-muted group-hover:text-brand-500 transition-colors">
+                                <i data-lucide="filter" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </div>
 
@@ -503,18 +515,30 @@
                 </div>
 
                 <div v-else>
-                    <div class="relative mb-10 group">
-                        <select v-model="reviewChapterIndex" class="w-full appearance-none bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200 dark:border-slate-700 text-ink-main dark:text-slate-200 text-lg rounded-2xl px-6 py-4 pr-12 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all-smooth shadow-sm cursor-pointer font-bold hover:border-brand-300 dark:hover:border-brand-600">
-                            <option v-for="(ch, idx) in quizData" :key="idx" :value="idx">{{ ch.chapter }}</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-ink-muted group-hover:text-brand-500 transition-colors">
-                            <i data-lucide="chevron-down" class="w-6 h-6"></i>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <div class="relative group flex-1">
+                            <select v-model="reviewChapterIndex" class="w-full appearance-none bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200 dark:border-slate-700 text-ink-main dark:text-slate-200 text-lg rounded-2xl px-6 py-4 pr-12 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all-smooth shadow-sm cursor-pointer font-bold hover:border-brand-300 dark:hover:border-brand-600">
+                                <option v-for="(ch, idx) in quizData" :key="idx" :value="idx">{{ ch.chapter }}</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-ink-muted group-hover:text-brand-500 transition-colors">
+                                <i data-lucide="chevron-down" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="relative group flex-1">
+                            <select v-model="questionFilterType" class="w-full appearance-none bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200 dark:border-slate-700 text-ink-main dark:text-slate-200 text-lg rounded-2xl px-6 py-4 pr-12 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all-smooth shadow-sm cursor-pointer font-bold hover:border-brand-300 dark:hover:border-brand-600">
+                                <option value="all">全部题型</option>
+                                <option value="mcq">仅选择题</option>
+                                <option value="sa">仅简答/操作题</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-ink-muted group-hover:text-brand-500 transition-colors">
+                                <i data-lucide="filter" class="w-6 h-6"></i>
+                            </div>
                         </div>
                     </div>
                     
                     <div v-if="quizData[reviewChapterIndex]" class="space-y-12">
                         <!-- MCQ Review -->
-                        <div>
+                        <div v-if="questionFilterType === 'all' || questionFilterType === 'mcq'">
                             <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200/60 dark:border-slate-700/60">
                                 <div class="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg">
                                     <i data-lucide="layout-list" class="w-5 h-5"></i>
@@ -555,7 +579,7 @@
                         </div>
                         
                         <!-- SA Review -->
-                        <div>
+                        <div v-if="questionFilterType === 'all' || questionFilterType === 'sa'">
                             <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200/60 dark:border-slate-700/60 mt-12">
                                 <div class="p-2 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-lg">
                                     <i data-lucide="edit-3" class="w-5 h-5"></i>
@@ -1631,6 +1655,7 @@
                 const mode = ref('quiz'); 
                 const selectedChapterIndex = ref("-1");
                 const reviewChapterIndex = ref(0);
+                const questionFilterType = ref("all");
                 
                 const currentQuestions = ref([]);
                 const currentQIndex = ref(0);
@@ -1672,7 +1697,7 @@
 
                 const startMistakesPractice = () => {
                     isPracticingMistakes.value = true;
-                    let questions = [...mistakes.value];
+                    let questions = mistakes.value.filter(m => questionFilterType.value === 'all' || m.type === questionFilterType.value);
                     for (let i = questions.length - 1; i > 0; i--) {
                         const j = Math.floor(Math.random() * (i + 1));
                         [questions[i], questions[j]] = [questions[j], questions[i]];
@@ -1715,7 +1740,7 @@
                     if (!query) return [];
                     const results = [];
                     quizData.forEach(ch => {
-                        if (ch.mcqs) {
+                        if (ch.mcqs && (questionFilterType.value === 'all' || questionFilterType.value === 'mcq')) {
                             ch.mcqs.forEach(q => {
                                 const optStr = q.options.join(" ");
                                 if (q.question.toLowerCase().includes(query) || q.answer.toLowerCase().includes(query) || optStr.toLowerCase().includes(query) || (q.explanation || "").toLowerCase().includes(query)) {
@@ -1723,7 +1748,7 @@
                                 }
                             });
                         }
-                        if (ch.short_answers) {
+                        if (ch.short_answers && (questionFilterType.value === 'all' || questionFilterType.value === 'sa')) {
                             ch.short_answers.forEach(q => {
                                 if (q.question.toLowerCase().includes(query) || q.answer.toLowerCase().includes(query)) {
                                     results.push({...q, type: 'sa', chapter: ch.chapter});
@@ -1789,7 +1814,7 @@
                 
                 const setMode = (m) => {
                     mode.value = m;
-                    if(m === 'quiz') resetQuiz();
+                    // if(m === 'quiz') resetQuiz();
                 }
 
                 const renderIcons = () => {
@@ -1820,10 +1845,10 @@
                     }
                     
                     chapters.forEach(ch => {
-                        if (ch.mcqs) {
+                        if (ch.mcqs && (questionFilterType.value === 'all' || questionFilterType.value === 'mcq')) {
                             ch.mcqs.forEach(q => questions.push({...q, type: 'mcq', chapter: ch.chapter}));
                         }
-                        if (ch.short_answers) {
+                        if (ch.short_answers && (questionFilterType.value === 'all' || questionFilterType.value === 'sa')) {
                             ch.short_answers.forEach(q => questions.push({...q, type: 'sa', chapter: ch.chapter}));
                         }
                     });
