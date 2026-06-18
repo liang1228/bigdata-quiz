@@ -756,8 +756,8 @@
                 "type": "short-answer"
             },
             {
-                "question": "简述大数据的商业价值和社会价值。 - 商业价值: 帮助企业精准营销、优化供应链、降低运营成本、辅助商业决策、发现新市场和新业务模式。 - 社会价值: 提升政府治理能力、改善智慧城市建设（如交通调度、环保监测）、推动医疗健康（疾病预测、个性化治疗）和教育等公共服务的发展。",
-                "answer": "",
+                "question": "简述大数据的商业价值和社会价值。",
+                "answer": "- 商业价值: 帮助企业精准营销、优化供应链、降低运营成本、辅助商业决策、发现新市场和新业务模式。\n- 社会价值: 提升政府治理能力、改善智慧城市建设（如交通调度、环保监测）、推动医疗健康（疾病预测、个性化治疗）和教育等公共服务的发展。",
                 "type": "short-answer"
             },
             {
@@ -1477,8 +1477,8 @@
                 "type": "short-answer"
             },
             {
-                "question": "MLlib的数据类型和API函数有哪些？如何使用？ 数据类型：本地向量（密集和稀疏）、标记点（Labeled point）、分布式矩阵（RowMatrix等）。 API：包含基于RDD的早期API (`spark.mllib`) 和基于DataFrame的新API (`spark.ml`)。 使用方法：读取数据并转换为MLlib支持的类型（如DataFrame或Labeled point）；选择合适的算法并设置参数；调用 `fit()` 方法使用训练集训练出模型；最后调用 `transform()` 或 `predict()` 方法对测试集进行预测。",
-                "answer": "",
+                "question": "MLlib的数据类型和API函数有哪些？如何使用？",
+                "answer": "数据类型：本地向量（密集和稀疏）、标记点（Labeled point）、分布式矩阵（RowMatrix等）。\nAPI：包含基于RDD的早期API (`spark.mllib`) 和基于DataFrame的新API (`spark.ml`)。\n使用方法：读取数据并转换为MLlib支持的类型（如DataFrame或Labeled point）；选择合适的算法并设置参数；调用 `fit()` 方法使用训练集训练出模型；最后调用 `transform()` 或 `predict()` 方法对测试集进行预测。",
                 "type": "short-answer"
             },
             {
@@ -1559,13 +1559,13 @@
         ],
         "short_answers": [
             {
-                "question": "简述Hive的组成及执行流程。 - 组成: 包括用户接口（CLI等）、元数据存储（Metastore）、以及核心引擎（解析器、编译器、优化器、执行器）。 - 执行流程: 用户提交HQL查询给Driver；Driver结合Metastore中的元数据将其解析、编译并优化为逻辑执行计划；然后转换为物理执行计划（通常是MapReduce任务的DAG图）；最后将任务提交给Hadoop集群执行，执行完成后返回结果。",
-                "answer": "",
+                "question": "简述Hive的组成及执行流程。",
+                "answer": "- 组成: 包括用户接口（CLI等）、元数据存储（Metastore）、以及核心引擎（解析器、编译器、优化器、执行器）。\n- 执行流程: 用户提交HQL查询给Driver；Driver结合Metastore中的元数据将其解析、编译并优化为逻辑执行计划；然后转换为物理执行计划（通常是MapReduce任务的DAG图）；最后将任务提交给Hadoop集群执行，执行完成后返回结果。",
                 "type": "short-answer"
             },
             {
-                "question": "比较ARRAY、MAP和STRUCT这3种数据类型的区别。 - ARRAY：数组，是一组相同类型的数据元素的有序集合，通过索引访问（如 `arr[0]`）。 - MAP：字典映射，是键值对（Key-Value）的集合，通过Key访问Value（如 `map['key']`）。 - STRUCT：结构体，可以包含多种不同数据类型的命名字段，类似C语言中的结构体或Java对象，通过点号访问（如 `struct.fieldname`）。",
-                "answer": "",
+                "question": "比较ARRAY、MAP和STRUCT这3种数据类型的区别。",
+                "answer": "- ARRAY：数组，是一组相同类型的数据元素的有序集合，通过索引访问（如 `arr[0]`）。\n- MAP：字典映射，是键值对（Key-Value）的集合，通过Key访问Value（如 `map['key']`）。\n- STRUCT：结构体，可以包含多种不同数据类型的命名字段，类似C语言中的结构体或Java对象，通过点号访问（如 `struct.fieldname`）。",
                 "type": "short-answer"
             },
             {
@@ -1590,8 +1590,8 @@
         "mcqs": [],
         "short_answers": [
             {
-                "question": "简述大数据展示平台的原理及功能。 - 原理: 通过数据接口从底层数据库或数据仓库中抽取处理好的数据，利用前端可视化技术（如Echarts）将数据转换为直观的图形图表展示给用户。 - 功能: 主要包括数据查询、多维数据分析、大屏数据可视化展示、实时数据监控、报表导出等。",
-                "answer": "",
+                "question": "简述大数据展示平台的原理及功能。",
+                "answer": "- 原理: 通过数据接口从底层数据库或数据仓库中抽取处理好的数据，利用前端可视化技术（如Echarts）将数据转换为直观的图形图表展示给用户。\n- 功能: 主要包括数据查询、多维数据分析、大屏数据可视化展示、实时数据监控、报表导出等。",
                 "type": "short-answer"
             },
             {
@@ -1605,8 +1605,8 @@
                 "type": "short-answer"
             },
             {
-                "question": "简述大数据展示平台涉及的关键技术。 - 后端技术: Spring Boot、MyBatis等框架开发RESTful API。 - 大数据技术: Hadoop、Spark、Hive用于数据的批处理与流处理。 - 存储技术: MySQL、Redis、HBase、ClickHouse等支持不同响应速度的数据存储。 - 前端技术: HTML5、Vue.js、ECharts或D3.js可视化图表库。",
-                "answer": "",
+                "question": "简述大数据展示平台涉及的关键技术。",
+                "answer": "- 后端技术: Spring Boot、MyBatis等框架开发RESTful API。\n- 大数据技术: Hadoop、Spark、Hive用于数据的批处理与流处理。\n- 存储技术: MySQL、Redis、HBase、ClickHouse等支持不同响应速度的数据存储。\n- 前端技术: HTML5、Vue.js、ECharts或D3.js可视化图表库。",
                 "type": "short-answer"
             },
             {
